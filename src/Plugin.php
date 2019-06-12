@@ -87,31 +87,6 @@ final class Plugin
             }
         }
 
-        // $this->container->set('loader', new Loader());
-        // $this->container->setWithConfig('constants', __NAMESPACE__ . '\Constants\Constants', 'constants');
-        // $this->container->set('controller', new Controller($this->container));
-        // $this->container->set('enqueue_controller', new EnqueueController($this->container));
-        // $this->container->set('events', new EventEmitter());
-        // $this->container->set('plugin_I18n', new I18n());
-        // $this->container->set('attributes', new Attributes());
-        // $this->container->set('options', new Options());
-        // $this->container->set('forms', new Forms($this->container->get('loader'), $this->container->get('attributes'), $this->container->get('options')));
-
-        // $settings_config = Paths::config() . "admin-settings-redux.php";
-        // $settings_defaults = Paths::config() . "admin-settings-defaults.php";
-        // $this->container->set('settings_config', new SettingsConfig($settings_config, $settings_defaults));
-        // $this->container->set('settings_callbacks', new SettingsCallbacks($this->container->get('loader'), $this->container->get('forms')));
-        // $this->container->set('settings', new Settings($this->container->get('settings_config'), $this->container->get('settings_callbacks')));
-        // $this->container->set('settings_api', new SettingsAPI($this->container->get('settings_config'), $this->container->get('settings_callbacks')));
-        // $this->container->set('settings_pages', new SettingsPages($this->container->get('settings_config'), $this->container->get('settings_callbacks')));
-        // $this->container->set('settings_link', new SettingsLink());
-        // $this->container->set('admin_controller', new AdminController($this->container, $this->container->get('settings')));
-        // // $this->container->setWithConfig('admin_controller', __NAMESPACE__ . '\Controller\AdminController', 'admin-settings-redux', true, array($this->container));
-        // $this->container->setWithConfig('enqueue_manager', __NAMESPACE__ . '\Enqueue\EnqueueManager', 'enqueue', true);
-        // $this->container->setWithConfig('admin_enqueue_manager', __NAMESPACE__ . '\Enqueue\EnqueueManager', 'admin-enqueue', true);
-        // $this->container->setWithConfig('compatibility', __NAMESPACE__ . '\Setup\Compatibility', 'requirements', false, array($this->container->get('loader')));
-
-
         return $this;
     }
 

@@ -28,12 +28,12 @@ return array(
 
     'pages' => array(
         array(
-            'page_title' => 'Starter Plugin',
-            'menu_title' => 'Starter Plugin',
+            'page_title' => __( 'Diviner', 'diviner-archive-plugin' ),
+            'menu_title' => __( 'Diviner', 'diviner-archive-plugin' ),
             'capability' => 'manage_options',
-            'menu_slug'  => 'starter-plugin',
-            'template'   => 'starter-plugin',
-            'icon_url'   => 'dashicons-external',
+            'menu_slug'  => 'diviner-plugin',
+            'template'   => 'diviner-plugin',
+            'icon_url'   => 'dashicons-star-filled',
             'position'   => 110,
         ),
     ),
@@ -65,6 +65,47 @@ return array(
     * Settings  : 'parent_slug' => 'Settings',
     *
     ********************************************************/
+
+    'subpages' => array(
+	    array(
+		    'parent_slug' => null,
+		    'page_title'  => __( 'Diviner Meta Field Wizard', 'diviner-archive-plugin' ),
+		    'menu_title'  => __( 'Diviner Meta Field Wizard', 'diviner-archive-plugin' ),
+		    'capability'  => 'manage_options',
+		    'menu_slug'   => 'diviner_wizard',
+		    'template'    => 'diviner-plugin-wizard',
+	    ),
+	    array(
+		    'parent_slug' => 'diviner-plugin',
+		    'page_title'  => __( 'Diviner Meta Fields', 'diviner-archive-plugin' ),
+		    'menu_title'  => __( 'Manage Diviner Meta Fields', 'diviner-archive-plugin' ),
+		    'capability'  => 'manage_options',
+		    'menu_slug'   => 'diviner-plugin-manage-fields',
+		    'template'    => 'diviner-plugin-fields',
+	    ),
+    ),
+
+	/*
+	add_submenu_page(
+		Settings::menu_slug(),
+		'Diviner Meta Fields',
+		'Manage Diviner Meta Fields',
+		'manage_options',
+		'diviner-manage-fields',
+		[ $this, 'rc_scd_create_dashboard' ]
+	);
+
+add_submenu_page(
+	null,           // -> Set to null - will hide menu link
+	'Diviner Meta Field Wizard',    // -> Page Title
+	'Diviner Meta Field Wizard',   // -> Title that would otherwise appear in the menu
+	'manage_options', // -> Capability level
+	self::SLUG_WIZARD,   // -> Still accessible via admin.php?page=menu_handle
+	[ $this,'rc_scd_create_wizard' ] // -> To render the page
+);
+
+	*/
+    /*
     'subpages' => array(
         array(
             'parent_slug' => 'starter-plugin',
@@ -91,6 +132,7 @@ return array(
             'template'    => 'starter-plugin-other',
         ),
     ),
+    */
 
     /*********************************************************
     * Admin custom sections
