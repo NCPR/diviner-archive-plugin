@@ -135,4 +135,7 @@ return [
     'post_types.diviner_field.postmeta' => [
 	    'class' => NCPR\DivinerArchivePlugin\CPT\Diviner_Field\PostMeta::class,
     ],
+    'admin.settings' => [
+	    'class' => NCPR\DivinerArchivePlugin\Admin\Settings::class,
+    ],
 ];

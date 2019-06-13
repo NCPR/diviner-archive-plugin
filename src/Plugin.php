@@ -127,7 +127,7 @@ final class Plugin
 
 	    $this->container->get('carbonfields.boot')->boot_carbon_fields();
 	    $this->container->get('post_types.diviner_field.postmeta')->hooks();
-
+	    $this->container->get('admin.settings')->hooks();
 
 
 	    $this->loaded = true;
