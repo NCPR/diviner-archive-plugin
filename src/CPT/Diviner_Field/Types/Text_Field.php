@@ -4,9 +4,9 @@
 namespace NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types;
 
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Diviner_Field;
-// use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\PostMeta as FieldPostMeta;
-//use Diviner\CarbonFields\Helper;
-//use Carbon_Fields\Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\PostMeta as FieldPostMeta;
+use NCPR\DivinerArchivePlugin\CarbonFields\Helper;
+use Carbon_Fields\Field;
 
 /**
  * Class Text Field

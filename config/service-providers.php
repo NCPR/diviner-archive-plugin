@@ -138,4 +138,8 @@ return [
     'admin.settings' => [
 	    'class' => NCPR\DivinerArchivePlugin\Admin\Settings::class,
     ],
+    'post_types.archive_item.postmeta' => [
+	    'class' => NCPR\DivinerArchivePlugin\CPT\Archive_Item\Post_Meta::class,
+    ],
+
 ];
