@@ -54,7 +54,7 @@ class AdminController extends Controller
      */
     protected function addAdminSettings()
     {
-        $this->settings->withSubPage('Dashboard');
+        $this->settings->withSubPage('Diviner Dashboard');
 
         if (! empty($this->settings->pages) || ! empty($this->settings->subpages)) {
             EventManager::addAction('admin_menu', array($this->settings, 'createAdminPages'));

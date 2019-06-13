@@ -125,7 +125,12 @@ final class Plugin
         $this->container->get('admin_controller')->load();
         $this->container->get('cpt_controller')->addCustomPostTypes();
 
-        $this->loaded = true;
+	    $this->container->get('carbonfields.boot')->boot_carbon_fields();
+	    $this->container->get('post_types.diviner_field.postmeta')->hooks();
+
+
+
+	    $this->loaded = true;
 
         return $this;
     }

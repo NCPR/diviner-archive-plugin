@@ -20,7 +20,7 @@ use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Preset_Fields_List_Table;
 	<?php if ( $presetFieldTable->is_empty() ) { ?>
 		<div class="about-text">
 			<p>
-				You have not custom fields currently active on your your archive items. That probably means you have just installed the plugin for the first time and are getting set up. Please refer to the documentation at <a href="https://ncpr.github.io/diviner-wp-archive-theme/">https://ncpr.github.io/diviner-wp-archive-theme/</a>.
+				You have no custom fields currently active on your your archive items. That probably means you have just installed the plugin for the first time and are getting set up. Please refer to the documentation at <a href="https://ncpr.github.io/diviner-wp-archive-theme/">https://ncpr.github.io/diviner-wp-archive-theme/</a>.
 			</p>
 			<p>
 				Click through the below link to add more diviner meta fields to your archive item.

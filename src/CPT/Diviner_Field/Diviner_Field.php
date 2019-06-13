@@ -3,6 +3,7 @@
 
 namespace NCPR\DivinerArchivePlugin\CPT\Diviner_Field;
 
+use NCPR\DivinerArchivePlugin\CarbonFields\Helper;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
 
 
@@ -25,7 +26,6 @@ class Diviner_Field {
 	}
 
 	public function hooks() {
-		add_action( 'init', [ $this,'register' ], 0, 0 );
 		add_filter( 'diviner_js_config', [ $this, 'custom_diviner_js_config' ] );
 		add_action( 'init', [ $this, 'hydrate_cache' ], 0 );
 		// add_filter( 'carbon_fields_should_save_field_value', [ $this, 'filter_should_save_field_value' ], 10, 3 );
@@ -149,11 +149,6 @@ class Diviner_Field {
 		}
 	}
 
-	public function register() {
-		$args = wp_parse_args( $this->get_args(), $this->get_labels() );
-		register_post_type( static::NAME, $args );
-	}
-
 	static public function get_active_fields($additional_meta_query = []) {
 		$meta_query = [
 			[
@@ -189,48 +184,6 @@ class Diviner_Field {
 		return $result;
 	}
 
-	/**
-	 * Args for register post type
-	 *
-	 * @return array
-	 */
-	public function get_args() {
-		return [
-			'public'             => false,
-			'publicly_queryable' => true,
-			'show_ui'            => true,
-			'show_in_menu'       => false,
-			'query_var'          => true,
-			'has_archive'        => false,
-			'hierarchical'       => false,
-			'menu_position'      => null,
-			'supports'           => [ 'title', 'excerpt' ],
-			'rewrite'            => false,
-			'exclude_from_search' => true
-		];
-	}
-
-	/**
-	 * Labels for register post type
-	 *
-	 * @return array
-	 */
-	public function get_labels() {
-		return [
-			'labels' => [
-				'singular'     => __( 'Diviner Field', 'diviner-archive-plugin' ),
-				'plural'       => __( 'Diviner Fields', 'diviner-archive-plugin' ),
-				'slug'         => _x( 'diviner-field', 'diviner field slug label', 'diviner-archive-plugin' ),
-				'name'         => _x( 'Diviner Fields', 'diviner field general name label', 'diviner-archive-plugin' ),
-				'add_new_item' => __( 'Add New Diviner Field', 'diviner-archive-plugin' ),
-				'edit_item'    => __( 'Edit Diviner Field', 'diviner-archive-plugin' ),
-				'new_item'     => __( 'New Diviner Field', 'diviner-archive-plugin' ),
-				'view_item'    => __( 'View Diviner Field', 'diviner-archive-plugin' ),
-				'view_items'   => __( 'View Diviner Fields', 'diviner-archive-plugin' )
-			]
-		];
-	}
-
 	static public function get_class_title( $field_type ) {
 		$field = Diviner_Field::get_class($field_type);
 		$field_title_string = sprintf('%s::TITLE', $field);
@@ -243,11 +196,13 @@ class Diviner_Field {
 	static public function get_class( $field_type ) {
 		$map = [
 			Text_Field::NAME     => Text_Field::class,
+			/*
 			Date_Field::NAME     => Date_Field::class,
 			CPT_Field::NAME      => CPT_Field::class,
 			Related_Field::NAME  => Related_Field::class,
 			Taxonomy_Field::NAME => Taxonomy_Field::class,
 			Select_Field::NAME   => Select_Field::class,
+			*/
 		];
 		if( !array_key_exists( $field_type, $map ) ){
 			throw UndefinedType("{$field_type} is not a valid field type");
