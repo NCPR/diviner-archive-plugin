@@ -129,6 +129,9 @@ final class Plugin
 	    $this->container->get('post_types.diviner_field.postmeta')->hooks();
 	    $this->container->get('admin.settings')->hooks();
 	    $this->container->get('post_types.archive_item.postmeta')->hooks();
+	    $this->container->get('post_types.archive_item.theme')->hooks();
+	    $this->container->get('post_types.archive_item.admin')->hooks();
+
 
 
 	    $this->loaded = true;

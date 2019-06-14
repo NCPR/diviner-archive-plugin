@@ -141,5 +141,10 @@ return [
     'post_types.archive_item.postmeta' => [
 	    'class' => NCPR\DivinerArchivePlugin\CPT\Archive_Item\Post_Meta::class,
     ],
-
+    'post_types.archive_item.theme' => [
+	    'class' => NCPR\DivinerArchivePlugin\CPT\Archive_Item\Theme::class,
+    ],
+    'post_types.archive_item.admin' => [
+	    'class' => NCPR\DivinerArchivePlugin\CPT\Archive_Item\AdminModifications::class,
+    ],
 ];
