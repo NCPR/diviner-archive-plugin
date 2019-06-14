@@ -5,7 +5,7 @@
  * @package    NCPR\DivinerArchivePlugin
  * @since      0.3.0
  * @author     graemehoffman
- * @link       http: //example.com
+ * @link       https://ncpr.github.io/diviner-wp-archive-theme/
  * @license    GNU General Public License 2.0+
  */
 
