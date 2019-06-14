@@ -295,10 +295,10 @@ class Theme {
 		}
 		$document_attachment_url = wp_get_attachment_url( $document );
 		$document_attachment_title = get_the_title( (int)$document );
-		$download_text = __( 'Download', 'ncpr-diviner' );
+		$download_text = __( 'Download', 'diviner-archive' );
 		if (!empty($document_attachment_title )) {
 			$download_text = sprintf(
-				__( 'Download %s', 'ncpr-diviner' ),
+				__( 'Download %s', 'diviner-archive' ),
 				$document_attachment_title
 			);
 		}

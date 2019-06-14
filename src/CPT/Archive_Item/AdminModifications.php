@@ -116,36 +116,36 @@ class AdminModifications {
 
 		add_submenu_page(
 			'edit.php?post_type=diviner_archive_item',
-			__('Add New Photo','ncpr-diviner'),
-			__('Add New Photo','ncpr-diviner'),
+			__('Add New Photo','diviner-archive'),
+			__('Add New Photo','diviner-archive'),
 			'edit_posts',
 			'post-new.php?post_type=diviner_archive_item&type=photo'
 		);
 		add_submenu_page(
 			'edit.php?post_type=diviner_archive_item',
-			__('Add New Audio','ncpr-diviner'),
-			__('Add New Audio','ncpr-diviner'),
+			__('Add New Audio','diviner-archive'),
+			__('Add New Audio','diviner-archive'),
 			'edit_posts',
 			'post-new.php?post_type=diviner_archive_item&type=audio'
 		);
 		add_submenu_page(
 			'edit.php?post_type=diviner_archive_item',
-			__('Add New Video','ncpr-diviner'),
-			__('Add New Video','ncpr-diviner'),
+			__('Add New Video','diviner-archive'),
+			__('Add New Video','diviner-archive'),
 			'edit_posts',
 			'post-new.php?post_type=diviner_archive_item&type=video'
 		);
 		add_submenu_page(
 			'edit.php?post_type=diviner_archive_item',
-			__('Add New Document','ncpr-diviner'),
-			__('Add New Document','ncpr-diviner'),
+			__('Add New Document','diviner-archive'),
+			__('Add New Document','diviner-archive'),
 			'edit_posts',
 			'post-new.php?post_type=diviner_archive_item&type=document'
 		);
 		add_submenu_page(
 			'edit.php?post_type=diviner_archive_item',
-			__('Add New Mixed Media','ncpr-diviner'),
-			__('Add New Mixed Media','ncpr-diviner'),
+			__('Add New Mixed Media','diviner-archive'),
+			__('Add New Mixed Media','diviner-archive'),
 			'edit_posts',
 			'post-new.php?post_type=diviner_archive_item&type=mixed'
 		);

@@ -111,7 +111,7 @@ class PostMeta {
 			$fields[] = $this->get_field_is_elastic();
 		}
 
-		$this->container = Container::make( 'post_meta', __( 'Field Variables', 'ncpr-diviner' ) )
+		$this->container = Container::make( 'post_meta', __( 'Field Variables', 'diviner-archive' ) )
 			->where( 'post_type', '=', Diviner_Field::NAME )
 			->add_fields( $fields )
 			->set_priority( 'high' );
@@ -134,7 +134,7 @@ class PostMeta {
 
 		/*
 		$date_required = ( $field_type === Date_Field::NAME );
-		$this->container = Container::make( 'post_meta', __( 'Date Field Variables', 'ncpr-diviner' ) )
+		$this->container = Container::make( 'post_meta', __( 'Date Field Variables', 'diviner-archive' ) )
 			->where( 'post_type', '=', Diviner_Field::NAME )
 			->add_fields( [
 				$this->get_field_date_type($date_required),
@@ -144,7 +144,7 @@ class PostMeta {
 			->set_priority( 'low' );
 
 		$taxonomy_required = ( $field_type === Taxonomy_Field::NAME );
-		$this->container = Container::make( 'post_meta', __( 'Taxonomy Field Variables', 'ncpr-diviner' ) )
+		$this->container = Container::make( 'post_meta', __( 'Taxonomy Field Variables', 'diviner-archive' ) )
 			->where( 'post_type', '=', Diviner_Field::NAME )
 			->add_fields( [
 				$this->get_field_taxonomy_type($taxonomy_required),
@@ -155,7 +155,7 @@ class PostMeta {
 			->set_priority( 'low' );
 
 		$cpt_required = ( $field_type === CPT_Field::NAME );
-		$this->container = Container::make( 'post_meta', __( 'Advanced Detail Field Variables', 'ncpr-diviner' ) )
+		$this->container = Container::make( 'post_meta', __( 'Advanced Detail Field Variables', 'diviner-archive' ) )
 			->where( 'post_type', '=', Diviner_Field::NAME )
 			->add_fields( [
 				$this->get_field_cpt_id($cpt_required),
@@ -165,7 +165,7 @@ class PostMeta {
 			->set_priority( 'low' );
 
 		$select_required = ( $field_type === Select_Field::NAME );
-		$this->container = Container::make( 'post_meta', __( 'Select Field Variables', 'ncpr-diviner' ) )
+		$this->container = Container::make( 'post_meta', __( 'Select Field Variables', 'diviner-archive' ) )
 			->where( 'post_type', '=', Diviner_Field::NAME )
 			->add_fields( [
 				$this->get_field_select_options($select_required),
@@ -215,82 +215,82 @@ class PostMeta {
 
 	/*
 	public function get_field_select_options($required = false) {
-		return Field::make( 'complex', static::FIELD_SELECT_OPTIONS, __( 'Select Options', 'ncpr-diviner' ) )
+		return Field::make( 'complex', static::FIELD_SELECT_OPTIONS, __( 'Select Options', 'diviner-archive' ) )
 			->add_fields( $this->get_field_select_option_fields($required) );
 	}
 
 	public function get_field_select_option_fields($required = false) {
 		$args = [];
-		$args[] = Field::make( 'text', static::FIELD_SELECT_OPTIONS_VALUE, __( 'Value', 'ncpr-diviner' ) )
+		$args[] = Field::make( 'text', static::FIELD_SELECT_OPTIONS_VALUE, __( 'Value', 'diviner-archive' ) )
 			->set_attribute( 'pattern', '^([A-Za-z]|[0-9]|_)+$' ) // letters numbers no spaces and underscores
-			->set_help_text( __( 'Use only lower case and underscores. No spaces. Used in the URL for facets search', 'ncpr-diviner' ) )
+			->set_help_text( __( 'Use only lower case and underscores. No spaces. Used in the URL for facets search', 'diviner-archive' ) )
 			->set_required( $required );
-		$args[] = Field::make( 'text', static::FIELD_SELECT_OPTIONS_LABEL, __( 'Label', 'ncpr-diviner' ) )
-			->set_help_text( __( 'Appears in the dropdown', 'ncpr-diviner' ) )
+		$args[] = Field::make( 'text', static::FIELD_SELECT_OPTIONS_LABEL, __( 'Label', 'diviner-archive' ) )
+			->set_help_text( __( 'Appears in the dropdown', 'diviner-archive' ) )
 			->set_required( $required );
 		return $args;
 	}
 
 	public function get_field_cpt_id($required = false) {
-		return Field::make( 'text', static::FIELD_CPT_ID, __( 'Advanced Detail Field ID (use only lower case with underscores)', 'ncpr-diviner' ) )
+		return Field::make( 'text', static::FIELD_CPT_ID, __( 'Advanced Detail Field ID (use only lower case with underscores)', 'diviner-archive' ) )
 			->set_attribute( 'pattern', '^([A-Za-z]|[0-9]|_)+$' ) // letters numbers no spaces and underscores
 			->set_required( $required );
 	}
 
 	public function get_field_cpt_label($required = false) {
-		return Field::make( 'text', static::FIELD_CPT_LABEL, __( 'Advanced Detail Field Label', 'ncpr-diviner' ) )
-			->set_help_text( __( 'Appears in the left side admin menu', 'ncpr-diviner' ) )
+		return Field::make( 'text', static::FIELD_CPT_LABEL, __( 'Advanced Detail Field Label', 'diviner-archive' ) )
+			->set_help_text( __( 'Appears in the left side admin menu', 'diviner-archive' ) )
 			->set_required( $required );
 	}
 
 	public function get_field_cpt_slug($required = false) {
-		return Field::make( 'text', static::FIELD_CPT_SLUG, __( 'Advanced Detail Field Slug (use only lower case with dashes)', 'ncpr-diviner' ) )
+		return Field::make( 'text', static::FIELD_CPT_SLUG, __( 'Advanced Detail Field Slug (use only lower case with dashes)', 'diviner-archive' ) )
 			->set_attribute( 'pattern', '^[a-z0-9]+(?:-[a-z0-9]+)*$')
 			->set_required( $required );
 	}
 
 	public function get_field_taxonomy_slug($required = false) {
-		return Field::make( 'text', static::FIELD_TAXONOMY_SLUG, __( 'Taxonomy Slug', 'ncpr-diviner' ) )
+		return Field::make( 'text', static::FIELD_TAXONOMY_SLUG, __( 'Taxonomy Slug', 'diviner-archive' ) )
 			->set_attribute('pattern', '^[a-z0-9]+(?:-[a-z0-9]+)*$' )
-			->set_help_text( __( 'Must be lowercase and dashes only (ex: types-of-work)', 'ncpr-diviner' ) )
+			->set_help_text( __( 'Must be lowercase and dashes only (ex: types-of-work)', 'diviner-archive' ) )
 			->set_required( $required );
 	}
 
 	public function get_field_taxonomy_singular_label($required = false) {
-		return Field::make( 'text', static::FIELD_TAXONOMY_SINGULAR_LABEL, __( 'Singular Taxonomy Label', 'ncpr-diviner' ) )
-			->set_help_text( __( 'ex: Type of Work', 'ncpr-diviner' ) )
+		return Field::make( 'text', static::FIELD_TAXONOMY_SINGULAR_LABEL, __( 'Singular Taxonomy Label', 'diviner-archive' ) )
+			->set_help_text( __( 'ex: Type of Work', 'diviner-archive' ) )
 			->set_required( $required );
 	}
 
 	public function get_field_taxonomy_plural_label($required = false) {
-		return Field::make( 'text', static::FIELD_TAXONOMY_PLURAL_LABEL, __( 'Plural Taxonomy Label', 'ncpr-diviner' ) )
-			->set_help_text( __( 'ex: Types of Work', 'ncpr-diviner' ) )
+		return Field::make( 'text', static::FIELD_TAXONOMY_PLURAL_LABEL, __( 'Plural Taxonomy Label', 'diviner-archive' ) )
+			->set_help_text( __( 'ex: Types of Work', 'diviner-archive' ) )
 			->set_required( $required );
 	}
 
 	public function get_field_taxonomy_type($required = false) {
-		return Field::make( 'select', static::FIELD_TAXONOMY_TYPE, __( 'Type of taxonomy field', 'ncpr-diviner' ) )
+		return Field::make( 'select', static::FIELD_TAXONOMY_TYPE, __( 'Type of taxonomy field', 'diviner-archive' ) )
 			->add_options( static::FIELD_TAXONOMY_TYPE_OPTIONS )
-			->set_help_text( __( 'Tag or category. Tags are non-hierarchical and categories are hierarchical.', 'ncpr-diviner' ) )
+			->set_help_text( __( 'Tag or category. Tags are non-hierarchical and categories are hierarchical.', 'diviner-archive' ) )
 			->set_required( $required );
 	}
 
 	public function get_field_date_start($required = false) {
-		return Field::make( 'date', static::FIELD_DATE_START, __( 'Start Date of Slider', 'ncpr-diviner' ) )
-			->set_help_text( __( 'If type is century, start date rounds down to nearest century. If type if decade, start date rounds to nearest decade. Only uses year.', 'ncpr-diviner' ) )
+		return Field::make( 'date', static::FIELD_DATE_START, __( 'Start Date of Slider', 'diviner-archive' ) )
+			->set_help_text( __( 'If type is century, start date rounds down to nearest century. If type if decade, start date rounds to nearest decade. Only uses year.', 'diviner-archive' ) )
 			->set_required( $required );
 	}
 
 	public function get_field_date_end($required = false) {
-		return Field::make( 'date', static::FIELD_DATE_END, __( 'End Date of Slider', 'ncpr-diviner' ) )
-			->set_help_text( __( 'If type is century, end date rounds down to nearest century. If type if decade, end date rounds to nearest decade. Only uses year.', 'ncpr-diviner' ) )
+		return Field::make( 'date', static::FIELD_DATE_END, __( 'End Date of Slider', 'diviner-archive' ) )
+			->set_help_text( __( 'If type is century, end date rounds down to nearest century. If type if decade, end date rounds to nearest decade. Only uses year.', 'diviner-archive' ) )
 			->set_required( $required );
 	}
 
 	public function get_field_date_type($required = false) {
-		return Field::make( 'select', static::FIELD_DATE_TYPE, __( 'Type of date field', 'ncpr-diviner' ) )
+		return Field::make( 'select', static::FIELD_DATE_TYPE, __( 'Type of date field', 'diviner-archive' ) )
 			->add_options( static::FIELD_DATE_TYPE_OPTIONS )
-			->set_help_text( __( 'Century slider, Decade slider, Year slider, and two date min max selector', 'ncpr-diviner' ) )
+			->set_help_text( __( 'Century slider, Decade slider, Year slider, and two date min max selector', 'diviner-archive' ) )
 			->set_required( $required );
 	}
 	*/
@@ -306,10 +306,10 @@ class PostMeta {
 			CPT_Field::NAME => CPT_Field::TITLE,
 			*/
 		];
-		$field =  Field::make( 'select', static::FIELD_TYPE, __( 'Type of field', 'ncpr-diviner' ) )
+		$field =  Field::make( 'select', static::FIELD_TYPE, __( 'Type of field', 'diviner-archive' ) )
 			->set_classes( static::FIELD_TYPE )
 			->add_options($types)
-			->set_help_text( __( 'What kind of field is this', 'ncpr-diviner' ) );
+			->set_help_text( __( 'What kind of field is this', 'diviner-archive' ) );
 
 		if ( !empty( $_GET[ 'field_type' ] ) ) {
 			$default_value = $_GET[ 'field_type' ];
@@ -333,7 +333,7 @@ class PostMeta {
 	}
 
 	public function get_field_id() {
-		$field = Field::make( 'text', static::FIELD_ID, __( 'Field ID (for reference only)', 'ncpr-diviner' ) )
+		$field = Field::make( 'text', static::FIELD_ID, __( 'Field ID (for reference only)', 'diviner-archive' ) )
 			->set_required( true )
 			->set_classes( static::FIELD_ID )
 			->set_attribute( 'readOnly', true );
@@ -350,40 +350,40 @@ class PostMeta {
 	}
 
 	public function get_field_active() {
-		return Field::make( 'checkbox', static::FIELD_ACTIVE, __( 'Is Field Active and Should it be Added to each Archive Item?', 'ncpr-diviner' ) )
+		return Field::make( 'checkbox', static::FIELD_ACTIVE, __( 'Is Field Active and Should it be Added to each Archive Item?', 'diviner-archive' ) )
 			->set_option_value( static::FIELD_CHECKBOX_VALUE )
 			->set_default_value( static::FIELD_CHECKBOX_VALUE );
 	}
 
 	public function get_field_browser_helper_text() {
-		return Field::make( 'text', static::FIELD_BROWSE_HELPER_TEXT, __( 'Browse Page Filter Helper Text', 'ncpr-diviner' ) )
-			->set_help_text( __( 'Appears next to your field’s title on the Browse Page. If your field is Type of Work, your helper text may read: Example: Agriculture, Mining, Service, etc.', 'ncpr-diviner' ) );
+		return Field::make( 'text', static::FIELD_BROWSE_HELPER_TEXT, __( 'Browse Page Filter Helper Text', 'diviner-archive' ) )
+			->set_help_text( __( 'Appears next to your field’s title on the Browse Page. If your field is Type of Work, your helper text may read: Example: Agriculture, Mining, Service, etc.', 'diviner-archive' ) );
 	}
 
 	public function get_field_admin_helper_text() {
-		return Field::make( 'text', static::FIELD_ADMIN_HELPER_TEXT, __( 'Admin Experience Helper Text', 'ncpr-diviner' ) )
-			->set_help_text( __( 'Select Field Variables', 'ncpr-diviner' ) );
+		return Field::make( 'text', static::FIELD_ADMIN_HELPER_TEXT, __( 'Admin Experience Helper Text', 'diviner-archive' ) )
+			->set_help_text( __( 'Select Field Variables', 'diviner-archive' ) );
 	}
 
 	public function get_field_browser_placement() {
-		return Field::make( 'select', static::FIELD_BROWSE_PLACEMENT, __( 'Browse Page Placement', 'ncpr-diviner' ) )
+		return Field::make( 'select', static::FIELD_BROWSE_PLACEMENT, __( 'Browse Page Placement', 'diviner-archive' ) )
 			->add_options( static::PLACEMENT_OPTIONS )
-			->set_help_text( __( 'Where this field will appear on your browse page. You can choose Top, Left, or none, if you do not wish to be able to search by this field (ex. if it is a call number relevant only to staff)', 'ncpr-diviner' ) );
+			->set_help_text( __( 'Where this field will appear on your browse page. You can choose Top, Left, or none, if you do not wish to be able to search by this field (ex. if it is a call number relevant only to staff)', 'diviner-archive' ) );
 	}
 
 	public function get_field_display_popup() {
-		return Field::make( 'checkbox', static::FIELD_BROWSE_DISPLAY, __( 'Check for this field to appear in the modal overlay in the Browse Page.', 'ncpr-diviner' ) )
+		return Field::make( 'checkbox', static::FIELD_BROWSE_DISPLAY, __( 'Check for this field to appear in the modal overlay in the Browse Page.', 'diviner-archive' ) )
 			->set_option_value( static::FIELD_CHECKBOX_VALUE );
 	}
 
 	public function get_field_is_sortable() {
-		return Field::make( 'checkbox', static::FIELD_BROWSE_IS_SORTABLE, __( 'Is this field sortable in the browse experience', 'ncpr-diviner' ) )
+		return Field::make( 'checkbox', static::FIELD_BROWSE_IS_SORTABLE, __( 'Is this field sortable in the browse experience', 'diviner-archive' ) )
 			->set_option_value( static::FIELD_CHECKBOX_VALUE )
 			->set_classes( static::FIELD_BROWSE_IS_SORTABLE );
 	}
 
 	public function get_field_is_elastic() {
-		return Field::make( 'checkbox', static::FIELD_BROWSE_IS_ELASTIC, __( 'Is this field searchable via the elastic search (only functional in tandem with elastic press plugin)', 'ncpr-diviner' ) )
+		return Field::make( 'checkbox', static::FIELD_BROWSE_IS_ELASTIC, __( 'Is this field searchable via the elastic search (only functional in tandem with elastic press plugin)', 'diviner-archive' ) )
 			->set_option_value( static::FIELD_CHECKBOX_VALUE )
 			->set_classes( static::FIELD_BROWSE_IS_ELASTIC );
 	}

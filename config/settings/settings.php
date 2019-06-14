@@ -28,8 +28,8 @@ return array(
 
     'pages' => array(
         array(
-            'page_title' => __( 'Diviner', 'diviner-archive-plugin' ),
-            'menu_title' => __( 'Diviner', 'diviner-archive-plugin' ),
+            'page_title' => __( 'Diviner', 'diviner-archive' ),
+            'menu_title' => __( 'Diviner', 'diviner-archive' ),
             'capability' => 'manage_options',
             'menu_slug'  => 'diviner-plugin',
             'template'   => 'diviner-plugin',
@@ -69,16 +69,16 @@ return array(
     'subpages' => array(
 	    array(
 		    'parent_slug' => null,
-		    'page_title'  => __( 'Diviner Meta Field Wizard', 'diviner-archive-plugin' ),
-		    'menu_title'  => __( 'Diviner Meta Field Wizard', 'diviner-archive-plugin' ),
+		    'page_title'  => __( 'Diviner Meta Field Wizard', 'diviner-archive' ),
+		    'menu_title'  => __( 'Diviner Meta Field Wizard', 'diviner-archive' ),
 		    'capability'  => 'manage_options',
 		    'menu_slug'   => 'diviner_wizard',
 		    'template'    => 'diviner-plugin-wizard',
 	    ),
 	    array(
 		    'parent_slug' => 'diviner-plugin',
-		    'page_title'  => __( 'Diviner Meta Fields', 'diviner-archive-plugin' ),
-		    'menu_title'  => __( 'Manage Diviner Meta Fields', 'diviner-archive-plugin' ),
+		    'page_title'  => __( 'Diviner Meta Fields', 'diviner-archive' ),
+		    'menu_title'  => __( 'Manage Diviner Meta Fields', 'diviner-archive' ),
 		    'capability'  => 'manage_options',
 		    'menu_slug'   => 'diviner-plugin-manage-fields',
 		    'template'    => 'diviner-plugin-fields',

@@ -119,7 +119,7 @@ abstract class FieldType implements iField {
 			wp_kses(
 				__(
 					'Learn more about this <b>%s</b> field in the <a href="%s">documentation website</a>.',
-					'diviner-archive-plugin'
+					'diviner-archive'
 				),
 				[
 					'a' => [

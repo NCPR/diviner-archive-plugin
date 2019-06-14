@@ -179,7 +179,7 @@ class Preset_Fields_List_Table extends \WP_List_Table
 
 	public function column_title( $item )
 	{
-		$title = __( '[ None ]', 'diviner-archive-plugin' );
+		$title = __( '[ None ]', 'diviner-archive' );
 		if (!empty($item[ 'title' ])) {
 			$title = $item[ 'title' ];
 		}

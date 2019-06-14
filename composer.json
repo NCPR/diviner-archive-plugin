@@ -1,5 +1,5 @@
 {
-    "name": "NCPR/diviner-archive-plugin",
+    "name": "NCPR/diviner-archive",
     "description": "Plugin for helping to turn wordpress into an archive.",
     "type": "wordpress-plugin",
     "keywords": ["wordpress", "plugin"],

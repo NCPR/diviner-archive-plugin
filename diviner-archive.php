@@ -15,7 +15,7 @@
  * Author URI:        http://graemehoffman.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       diviner-archive-plugin
+ * Text Domain:       diviner-archive
  * Domain Path:       /resources/lang/
  */
 

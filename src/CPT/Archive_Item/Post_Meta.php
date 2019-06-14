@@ -67,7 +67,7 @@ class Post_Meta {
 		$this->container = Container::make(
 			'post_meta',
 			static::CONTAINER_TYPES,
-			__( 'Type', 'ncpr-diviner' )
+			__( 'Type', 'diviner-archive' )
 		)
 			->where( 'post_type', '=', Archive_Item::NAME )
 			->add_fields( [
@@ -78,7 +78,7 @@ class Post_Meta {
 		$this->container = Container::make(
 			'post_meta',
 			static::CONTAINER_TYPE_PHOTO,
-			__( 'Photo', 'ncpr-diviner' )
+			__( 'Photo', 'diviner-archive' )
 		)
 			->where( 'post_type', '=', Archive_Item::NAME )
 			->add_fields( [
@@ -89,7 +89,7 @@ class Post_Meta {
 		$this->container = Container::make(
 			'post_meta',
 			static::CONTAINER_TYPE_AUDIO,
-			__( 'Audio', 'ncpr-diviner' )
+			__( 'Audio', 'diviner-archive' )
 		)
 			->where( 'post_type', '=', Archive_Item::NAME )
 			->add_fields( [
@@ -101,7 +101,7 @@ class Post_Meta {
 		$this->container = Container::make(
 			'post_meta',
 			static::CONTAINER_TYPE_VIDEO,
-			__( 'Video', 'ncpr-diviner' )
+			__( 'Video', 'diviner-archive' )
 		)
 			->where( 'post_type', '=', Archive_Item::NAME )
 			->add_fields( [
@@ -112,7 +112,7 @@ class Post_Meta {
 		$this->container = Container::make(
 			'post_meta',
 			static::CONTAINER_TYPE_DOCUMENT,
-			__( 'Document', 'ncpr-diviner' )
+			__( 'Document', 'diviner-archive' )
 		)
 			->where( 'post_type', '=', Archive_Item::NAME )
 			->add_fields( [
@@ -153,14 +153,14 @@ class Post_Meta {
 		$field = Related_Field::render(
 			0,
 			static::FIELD_RELATED,
-			__( 'Related Archive Items', 'ncpr-diviner' ),
-			__( 'Appears on each archive item single page as a slider. Scroll down for the full list of archive items to choose from.', 'ncpr-diviner' )
+			__( 'Related Archive Items', 'diviner-archive' ),
+			__( 'Appears on each archive item single page as a slider. Scroll down for the full list of archive items to choose from.', 'diviner-archive' )
 		);
 		$dynamic_fields[] = $field;
 		*/
 
 		if ( count($dynamic_fields) ) {
-			$dyn_fields_container = Container::make( 'post_meta', __( 'Additional Fields', 'ncpr-diviner' ) )
+			$dyn_fields_container = Container::make( 'post_meta', __( 'Additional Fields', 'diviner-archive' ) )
 				->where( 'post_type', '=', Archive_Item::NAME )
 				->add_fields( $dynamic_fields )
 				->set_priority( 'default' );
@@ -173,7 +173,7 @@ class Post_Meta {
 		return Field::make(
 			'file',
 			static::FIELD_DOCUMENT ,
-			__( 'Any other document not an image or video or audio. Ex: PDF', 'ncpr-diviner' )
+			__( 'Any other document not an image or video or audio. Ex: PDF', 'diviner-archive' )
 		);
 
 	}
@@ -183,7 +183,7 @@ class Post_Meta {
 		return Field::make(
 			'image',
 			static::FIELD_PHOTO,
-			__( 'Large feature image to appear in single page.', 'ncpr-diviner' )
+			__( 'Large feature image to appear in single page.', 'diviner-archive' )
 		);
 
 	}
@@ -193,26 +193,26 @@ class Post_Meta {
 		return Field::make(
 			'oembed',
 			static::FIELD_VIDEO_OEMBED,
-			__( 'Any oembed video url', 'ncpr-diviner' )
+			__( 'Any oembed video url', 'diviner-archive' )
 		);
 	}
 
 	public function get_field_audio()
 	{
-		return Field::make( 'file', static::FIELD_AUDIO , __( 'Any Audio File', 'ncpr-diviner' ) )
+		return Field::make( 'file', static::FIELD_AUDIO , __( 'Any Audio File', 'diviner-archive' ) )
 			->set_type( 'audio' );
 
 	}
 
 	public function get_field_audio_oembed()
 	{
-		return Field::make( 'oembed', static::FIELD_AUDIO_OEMBED, __( 'Any Oembed Audio File', 'ncpr-diviner' ) );
+		return Field::make( 'oembed', static::FIELD_AUDIO_OEMBED, __( 'Any Oembed Audio File', 'diviner-archive' ) );
 	}
 
 	public function get_field_types() {
-		$field = Field::make( 'select', static::FIELD_TYPE, __( 'Type of Archive Item', 'ncpr-diviner' ) )
+		$field = Field::make( 'select', static::FIELD_TYPE, __( 'Type of Archive Item', 'diviner-archive' ) )
 			->add_options( static::FIELD_TYPE_OPTIONS )
-			->set_help_text( __( 'What kind of field is this?', 'ncpr-diviner' ) );
+			->set_help_text( __( 'What kind of field is this?', 'diviner-archive' ) );
 		if( isset( $_GET["type"] ) ) {
 			$field->set_default_value( 'div_ai_field_' . $_GET["type"] );
 		}

@@ -77,7 +77,7 @@ class Text_Field extends FieldType {
 		$options = [];
 		// Ascending
 		$label = sprintf(
-			__( 'Alphabetical %s', 'diviner-archive-plugin' ),
+			__( 'Alphabetical %s', 'diviner-archive' ),
 			get_the_title($field_id)
 		);
 		$value = sprintf(

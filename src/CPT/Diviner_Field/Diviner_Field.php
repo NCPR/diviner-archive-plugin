@@ -231,11 +231,11 @@ class Diviner_Field {
 		$defaults = [
 			[
 				'value' => static::ORDER_BY_PUBLICATION_DATE,
-				'label' => __( 'Publish Date', 'diviner-archive-plugin' ),
+				'label' => __( 'Publish Date', 'diviner-archive' ),
 			],
 			[
 				'value' => static::ORDER_BY_TITLE,
-				'label' => __( 'Title', 'diviner-archive-plugin' ),
+				'label' => __( 'Title', 'diviner-archive' ),
 			],
 		];
 

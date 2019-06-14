@@ -15,15 +15,15 @@ return [
 	[
         'id' => 'diviner_field',
         'labels'      => [
-	        'singular'     => __( 'Diviner Field', 'diviner-archive-plugin' ),
-	        'plural'       => __( 'Diviner Fields', 'diviner-archive-plugin' ),
-	        'slug'         => _x( 'diviner-field', 'diviner field slug label', 'diviner-archive-plugin' ),
-	        'name'         => _x( 'Diviner Fields', 'diviner field general name label', 'diviner-archive-plugin' ),
-	        'add_new_item' => __( 'Add New Diviner Field', 'diviner-archive-plugin' ),
-	        'edit_item'    => __( 'Edit Diviner Field', 'diviner-archive-plugin' ),
-	        'new_item'     => __( 'New Diviner Field', 'diviner-archive-plugin' ),
-	        'view_item'    => __( 'View Diviner Field', 'diviner-archive-plugin' ),
-	        'view_items'   => __( 'View Diviner Fields', 'diviner-archive-plugin' )
+	        'singular'     => __( 'Diviner Field', 'diviner-archive' ),
+	        'plural'       => __( 'Diviner Fields', 'diviner-archive' ),
+	        'slug'         => _x( 'diviner-field', 'diviner field slug label', 'diviner-archive' ),
+	        'name'         => _x( 'Diviner Fields', 'diviner field general name label', 'diviner-archive' ),
+	        'add_new_item' => __( 'Add New Diviner Field', 'diviner-archive' ),
+	        'edit_item'    => __( 'Edit Diviner Field', 'diviner-archive' ),
+	        'new_item'     => __( 'New Diviner Field', 'diviner-archive' ),
+	        'view_item'    => __( 'View Diviner Field', 'diviner-archive' ),
+	        'view_items'   => __( 'View Diviner Fields', 'diviner-archive' )
         ],
         'public'             => false,
         'publicly_queryable' => true,
@@ -41,20 +41,20 @@ return [
 	[
 		'id' => 'diviner_archive_item',
 		'labels'      => [
-			'singular'     => _x( 'Archive Item', 'archive item', 'diviner-archive-plugin' ),
-			'plural'       => _x( 'Archive Items', 'archive item', 'diviner-archive-plugin' ),
-			'slug'         => _x( 'archive-item', 'archive item', 'diviner-archive-plugin' ),
-			'name'         => _x( 'Archive Items', 'archive item', 'diviner-archive-plugin' ),
-			'add_new_item' => _x( 'Add New Archive Item', 'archive item', 'diviner-archive-plugin' ),
-			'edit_item'    => _x( 'Edit Archive Item', 'archive item', 'diviner-archive-plugin' ),
+			'singular'     => _x( 'Archive Item', 'archive item', 'diviner-archive' ),
+			'plural'       => _x( 'Archive Items', 'archive item', 'diviner-archive' ),
+			'slug'         => _x( 'archive-item', 'archive item', 'diviner-archive' ),
+			'name'         => _x( 'Archive Items', 'archive item', 'diviner-archive' ),
+			'add_new_item' => _x( 'Add New Archive Item', 'archive item', 'diviner-archive' ),
+			'edit_item'    => _x( 'Edit Archive Item', 'archive item', 'diviner-archive' ),
 			// Overrides the “Featured Image” label
-			'featured_image'        => _x( 'Thumbnail image', 'archive item', 'diviner-archive-plugin' ),
+			'featured_image'        => _x( 'Thumbnail image', 'archive item', 'diviner-archive' ),
 			// Overrides the “Set featured image” label
-			'set_featured_image'    => _x( 'Set thumbnail image', 'archive item', 'diviner-archive-plugin' ),
+			'set_featured_image'    => _x( 'Set thumbnail image', 'archive item', 'diviner-archive' ),
 			// Overrides the “Remove featured image” label
-			'remove_featured_image' => _x( 'Remove thumbnail image', 'archive item', 'diviner-archive-plugin' ),
+			'remove_featured_image' => _x( 'Remove thumbnail image', 'archive item', 'diviner-archive' ),
 			// Overrides the “Use as featured image” label
-			'use_featured_image'    => _x( 'Use as thumbnail image', 'archive item', 'diviner-archive-plugin' ),
+			'use_featured_image'    => _x( 'Use as thumbnail image', 'archive item', 'diviner-archive' ),
 		],
 		'public'             => true,
 		'publicly_queryable' => true,

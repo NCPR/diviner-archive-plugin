@@ -1,1 +1,0 @@
-<input id="<?=$args['id'];?>" class="<?=$args['attributes']['class'];?>" name="<?=$args['id'];?>" type="<?=$args['type'];?>" value="<?=$args['value'];?>" placeholder="<?=$args['attributes']['placeholder'];?>" <?=$args['attributes']['required'];?> />

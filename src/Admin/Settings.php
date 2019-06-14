@@ -54,7 +54,7 @@ class Settings {
 		// We can save the result of an instance call in a static property as it will be called once per HTTP request.
 		static::$theme_options = Container::make(
 			'theme_options',
-			__( 'General Diviner Settings', 'ncpr-diviner' )
+			__( 'General Diviner Settings', 'diviner-archive' )
 		)
 			->set_page_parent( static::GENERAL_SETTINGS_SLUG )
 			->add_fields(
@@ -65,8 +65,8 @@ class Settings {
 	}
 
 	public function permissions_field() {
-		return Field::make( 'rich_text', static::FIELD_GENERAL_PERMISSIONS, __( 'Permissions/Rights Note on Archive item', 'ncpr-diviner' ) )
-			->set_help_text( __( 'This statement will appear on all archive items if you choose to add one. This is the primary way to communicate to your audience who owns/has the copyright to media (photos, videos, documents, etc.) in your archive', 'ncpr-diviner' ) );
+		return Field::make( 'rich_text', static::FIELD_GENERAL_PERMISSIONS, __( 'Permissions/Rights Note on Archive item', 'diviner-archive' ) )
+			->set_help_text( __( 'This statement will appear on all archive items if you choose to add one. This is the primary way to communicate to your audience who owns/has the copyright to media (photos, videos, documents, etc.) in your archive', 'diviner-archive' ) );
 	}
 
 
