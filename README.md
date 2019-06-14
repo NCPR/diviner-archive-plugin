@@ -31,21 +31,12 @@ Make sure all dependencies have been installed before moving on:
 
 ## Installation
 
-1. From the command line navigate to your WordPress `plugins` directory.
-2. Run this command: `composer create-project sb2-media/wordpress-starter-plugin`.
-3. Rename the `wordpress-starter-plugin` directory to `your-plugin-name`.
-3. Change into the plugin directory: `cd your-plugin-name`.
-4. Update the `package.json` file with your info.
-5. Update the main plugin header in `plugin.php` with your plugin info.
-6. Run `npm install`.
-7. Run `npm run dev`.
-8. Global search and replace `NCPR\DivinerArchivePlugin` namespaces with `YourCompanyName\YourPluginName`.
-9. Update `composer.json` with relevant information including the namespaces defined in the `autoload` section. They must match the namespaces used in the previous step.
-10. Run `composer dump-autoload -o`.
-11. In the WordPress dashboard, navigate to the *Plugins* page and locate the menu item that reads “Your Plugin Name.”
-12. Click on *Activate.*
+1. Run `npm install`.
+2. Run `npm run dev`.
+3. Run `composer install`.
+4. In the WordPress dashboard, navigate to the *Plugins* page and locate your plugin
+5. Click on *Activate.*
 
-Note that this will activate the source code of the starter plugin, but because it has no real functionality no menu items, meta boxes, or custom post types will be added.
 
 ## Usage
 

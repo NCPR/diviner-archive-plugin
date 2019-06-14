@@ -1,0 +1,436 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-06-14 22:34+0200\n"
+"PO-Revision-Date: 2019-06-14 22:34+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.3\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_n;_x;esc_html__;esc_html_e;esc_html_x;"
+"esc_attr__;esc_attr_e;esc_attr_x;_ex\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: vendor/squizlabs\n"
+"X-Poedit-SearchPathExcluded-1: vendor/phpunit\n"
+"X-Poedit-SearchPathExcluded-2: vendor/webmozart\n"
+"X-Poedit-SearchPathExcluded-3: vendor/htmlburger\n"
+"X-Poedit-SearchPathExcluded-4: node_modules\n"
+
+#: config/cpt.php:18
+msgid "Diviner Field"
+msgstr ""
+
+#: config/cpt.php:19 config/cpt.php:21
+msgid "Diviner Fields"
+msgstr ""
+
+#: config/cpt.php:20
+msgid "diviner-field"
+msgstr ""
+
+#: config/cpt.php:22
+msgid "Add New Diviner Field"
+msgstr ""
+
+#: config/cpt.php:23
+msgid "Edit Diviner Field"
+msgstr ""
+
+#: config/cpt.php:24
+msgid "New Diviner Field"
+msgstr ""
+
+#: config/cpt.php:25
+msgid "View Diviner Field"
+msgstr ""
+
+#: config/cpt.php:26
+msgid "View Diviner Fields"
+msgstr ""
+
+#: config/cpt.php:44
+msgid "Archive Item"
+msgstr ""
+
+#: config/cpt.php:45 config/cpt.php:47
+msgid "Archive Items"
+msgstr ""
+
+#: config/cpt.php:46
+msgid "archive-item"
+msgstr ""
+
+#: config/cpt.php:48
+msgid "Add New Archive Item"
+msgstr ""
+
+#: config/cpt.php:49
+msgid "Edit Archive Item"
+msgstr ""
+
+#: config/cpt.php:51
+msgid "Thumbnail image"
+msgstr ""
+
+#: config/cpt.php:53
+msgid "Set thumbnail image"
+msgstr ""
+
+#: config/cpt.php:55
+msgid "Remove thumbnail image"
+msgstr ""
+
+#: config/cpt.php:57
+msgid "Use as thumbnail image"
+msgstr ""
+
+#: config/settings/settings.php:31 config/settings/settings.php:32
+msgid "Diviner"
+msgstr ""
+
+#: config/settings/settings.php:72 config/settings/settings.php:73
+msgid "Diviner Meta Field Wizard"
+msgstr ""
+
+#: config/settings/settings.php:80
+msgid "Diviner Meta Fields"
+msgstr ""
+
+#: config/settings/settings.php:81
+msgid "Manage Diviner Meta Fields"
+msgstr ""
+
+#: src/Admin/Settings.php:57 views/admin/pages/diviner-plugin.php:39
+msgid "General Diviner Settings"
+msgstr ""
+
+#: src/Admin/Settings.php:68
+msgid "Permissions/Rights Note on Archive item"
+msgstr ""
+
+#: src/Admin/Settings.php:69
+msgid ""
+"This statement will appear on all archive items if you choose to add one. "
+"This is the primary way to communicate to your audience who owns/has the "
+"copyright to media (photos, videos, documents, etc.) in your archive"
+msgstr ""
+
+#: src/CPT/Archive_Item/AdminModifications.php:119
+#: src/CPT/Archive_Item/AdminModifications.php:120
+msgid "Add New Photo"
+msgstr ""
+
+#: src/CPT/Archive_Item/AdminModifications.php:126
+#: src/CPT/Archive_Item/AdminModifications.php:127
+msgid "Add New Audio"
+msgstr ""
+
+#: src/CPT/Archive_Item/AdminModifications.php:133
+#: src/CPT/Archive_Item/AdminModifications.php:134
+msgid "Add New Video"
+msgstr ""
+
+#: src/CPT/Archive_Item/AdminModifications.php:140
+#: src/CPT/Archive_Item/AdminModifications.php:141
+msgid "Add New Document"
+msgstr ""
+
+#: src/CPT/Archive_Item/AdminModifications.php:147
+#: src/CPT/Archive_Item/AdminModifications.php:148
+msgid "Add New Mixed Media"
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:70
+msgid "Type"
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:81
+msgid "Photo"
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:92
+msgid "Audio"
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:104
+msgid "Video"
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:115
+msgid "Document"
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:163
+msgid "Additional Fields"
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:176
+msgid "Any other document not an image or video or audio. Ex: PDF"
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:186
+msgid "Large feature image to appear in single page."
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:196
+msgid "Any oembed video url"
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:202
+msgid "Any Audio File"
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:209
+msgid "Any Oembed Audio File"
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:213
+msgid "Type of Archive Item"
+msgstr ""
+
+#: src/CPT/Archive_Item/Post_Meta.php:215
+msgid "What kind of field is this?"
+msgstr ""
+
+#: src/CPT/Archive_Item/Theme.php:312
+msgid "Download"
+msgstr ""
+
+#: src/CPT/Archive_Item/Theme.php:315
+#, php-format
+msgid "Download %s"
+msgstr ""
+
+#: src/CPT/Diviner_Field/Diviner_Field.php:234
+msgid "Publish Date"
+msgstr ""
+
+#: src/CPT/Diviner_Field/Diviner_Field.php:238
+msgid "Title"
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:114
+msgid "Field Variables"
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:309
+msgid "Type of field"
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:312
+msgid "What kind of field is this"
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:336
+msgid "Field ID (for reference only)"
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:353
+msgid "Is Field Active and Should it be Added to each Archive Item?"
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:359
+msgid "Browse Page Filter Helper Text"
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:360
+msgid ""
+"Appears next to your field’s title on the Browse Page. If your field is Type "
+"of Work, your helper text may read: Example: Agriculture, Mining, Service, "
+"etc."
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:364
+msgid "Admin Experience Helper Text"
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:365
+msgid "Select Field Variables"
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:369
+msgid "Browse Page Placement"
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:371
+msgid ""
+"Where this field will appear on your browse page. You can choose Top, Left, "
+"or none, if you do not wish to be able to search by this field (ex. if it is "
+"a call number relevant only to staff)"
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:375
+msgid "Check for this field to appear in the modal overlay in the Browse Page."
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:380
+msgid "Is this field sortable in the browse experience"
+msgstr ""
+
+#: src/CPT/Diviner_Field/PostMeta.php:386
+msgid ""
+"Is this field searchable via the elastic search (only functional in tandem "
+"with elastic press plugin)"
+msgstr ""
+
+#: src/CPT/Diviner_Field/Preset_Fields_List_Table.php:181
+msgid "[ None ]"
+msgstr ""
+
+#: src/CPT/Diviner_Field/Types/FieldType.php:121
+#, php-format
+msgid ""
+"Learn more about this <b>%s</b> field in the <a href=\"%s\">documentation "
+"website</a>."
+msgstr ""
+
+#: src/CPT/Diviner_Field/Types/Text_Field.php:80
+#, php-format
+msgid "Alphabetical %s"
+msgstr ""
+
+#: src/File/Loader.php:66
+msgid "The file does not exist."
+msgstr ""
+
+#: src/File/Loader.php:70
+msgid "The file is not readable"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-fields.php:14
+msgid "Add Fields to Your Archive Items and the Browse Page"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-fields.php:18
+#: views/admin/pages/diviner-plugin-fields.php:64
+msgid "Create a New Meta Field"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-fields.php:29
+#, php-format
+msgid ""
+"You have no custom fields currently active on your your archive items. That "
+"probably means you have just installed the plugin for the first time and are "
+"getting set up. Please refer to the documentation at <a href=\"%s\" target="
+"\"_blank\">%s</a>."
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-fields.php:37
+msgid ""
+"Click through the below link to add more diviner meta fields to your archive "
+"item."
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-fields.php:43
+msgid ""
+"Listed below are the fields you have created and added to your archive "
+"items. These fields represent a) the information you wish to be connected to "
+"your archive items, and b) how visitors and users of your site will be able "
+"to search through your archive items. Activate all fields you wish to appear "
+"on the front and back end of your site."
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-fields.php:58
+msgid "Build out your archive item!"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-fields.php:60
+msgid "Add meta data to your archive item"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-wizard.php:12
+msgid "Select a Diviner Meta Field to Create"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-wizard.php:16
+msgid ""
+"So you have a bunch of photos/videos/documents….but how do you want your "
+"audience to be able to find them? Whether it’s by date, location, or subject "
+"matter, this is where you design your uploading experience by choosing what "
+"information will be assigned to each archive item."
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-wizard.php:23
+msgid "There is currently one type of field:"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-wizard.php:29
+msgid "Text Field"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-wizard.php:33
+msgid ""
+"Add a text field for information you wish to assign to each archive item. "
+"Example: serial number, catalog number, internal title, secondary "
+"description etc."
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-wizard.php:37
+msgid "Add a New Text Meta Field"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin-wizard.php:43
+#: views/admin/pages/diviner-plugin.php:54
+msgid ""
+"Note: This plugin will evolve overtime. We will be adding more field types "
+"(date, custom post type, taxonomy, and select) as well as real-time search "
+"experience."
+msgstr ""
+
+#: views/admin/pages/diviner-plugin.php:9
+msgid "Diviner Archiving Plugin"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin.php:13
+msgid ""
+"Thank you for installing the Diviner Archiving Plugin. This wordpress plugin "
+"allows small institutions and media organizations to create a public-facing, "
+"custom archive interface for a themed collection of media."
+msgstr ""
+
+#: views/admin/pages/diviner-plugin.php:16
+msgid "The main features of this project are"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin.php:18
+msgid ""
+"Small scale archiving tool for a wide array of media materials (audio, "
+"video, documents, articles)"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin.php:19
+msgid "Dublin Core-like meta data fields"
+msgstr ""
+
+#: views/admin/pages/diviner-plugin.php:25
+#, php-format
+msgid ""
+"Read more about this plugin on the <a href=\"%s\" target=\"_blank"
+"\">documentation website</a>."
+msgstr ""
+
+#: views/admin/pages/diviner-plugin.php:34
+msgid "Start by reviewing the general settings of your archive."
+msgstr ""
+
+#: views/admin/pages/diviner-plugin.php:44
+msgid "Next, create new meta data fields for your archive items."
+msgstr ""
+
+#: views/admin/pages/diviner-plugin.php:49
+msgid "Create New Diviner Meta Field"
+msgstr ""
+
+#: wp-content/plugins/carbon-fields-plugin/core/Libraries/Plugin_Update_Warning/Plugin_Update_Warning.php:69
+#, php-format
+msgid ""
+"The new version of Carbon Fields is a major update. Please make sure you "
+"have a full backup before updating and test any add-ons or custom "
+"functionality.\n"
+"Developers should review the upgrade guide on %1$s."
+msgstr ""

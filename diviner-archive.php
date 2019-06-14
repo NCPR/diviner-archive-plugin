@@ -10,7 +10,7 @@
  * Plugin Name:       Diviner Archive Plugin
  * Plugin URI:        https://ncpr.github.io/diviner-wp-archive-theme/
  * Description:       Provides a set of tools for wordpress sites with archives. Developed wth North Country Public Radio
- * Version:           1.0.0
+ * Version:           0.5
  * Author:            Graeme Hoffman
  * Author URI:        http://graemehoffman.com/
  * License:           GPL-2.0+

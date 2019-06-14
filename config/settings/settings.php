@@ -75,6 +75,7 @@ return array(
 		    'menu_slug'   => 'diviner_wizard',
 		    'template'    => 'diviner-plugin-wizard',
 	    ),
+	    /*
 	    array(
 		    'parent_slug' => 'diviner-plugin',
 		    'page_title'  => __( 'Diviner Meta Fields', 'diviner-archive' ),
@@ -83,6 +84,7 @@ return array(
 		    'menu_slug'   => 'diviner-plugin-manage-fields',
 		    'template'    => 'diviner-plugin-fields',
 	    ),
+	    */
     ),
 
     /*********************************************************
