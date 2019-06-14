@@ -1,4 +1,4 @@
-# Diviner Archive Plugin
+# Diviner Archive
 
 Tools for an archive in Wordpress based on https://github.com/sbarry50/wordpress-starter-plugin, an object-oriented foundation with a modern file architecture, standards and build tools for crafting high-quality WordPress Plugins.
 
