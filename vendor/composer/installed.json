@@ -1,0 +1,440 @@
+[
+    {
+        "name": "composer/installers",
+        "version": "v1.3.0",
+        "version_normalized": "1.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/composer/installers.git",
+            "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/composer/installers/zipball/79ad876c7498c0bbfe7eed065b8651c93bfd6045",
+            "reference": "79ad876c7498c0bbfe7eed065b8651c93bfd6045",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0"
+        },
+        "replace": {
+            "roundcube/plugin-installer": "*",
+            "shama/baton": "*"
+        },
+        "require-dev": {
+            "composer/composer": "1.0.*@dev",
+            "phpunit/phpunit": "4.1.*"
+        },
+        "time": "2017-04-24T06:37:16+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "Composer\\Installers\\Plugin",
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Composer\\Installers\\": "src/Composer/Installers"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kyle Robinson Young",
+                "email": "kyle@dontkry.com",
+                "homepage": "https://github.com/shama"
+            }
+        ],
+        "description": "A multi-framework Composer library installer",
+        "homepage": "https://composer.github.io/installers/",
+        "keywords": [
+            "Craft",
+            "Dolibarr",
+            "Eliasis",
+            "Hurad",
+            "ImageCMS",
+            "Kanboard",
+            "MODX Evo",
+            "Mautic",
+            "Maya",
+            "OXID",
+            "Plentymarkets",
+            "Porto",
+            "RadPHP",
+            "SMF",
+            "Thelia",
+            "WolfCMS",
+            "agl",
+            "aimeos",
+            "annotatecms",
+            "attogram",
+            "bitrix",
+            "cakephp",
+            "chef",
+            "cockpit",
+            "codeigniter",
+            "concrete5",
+            "croogo",
+            "dokuwiki",
+            "drupal",
+            "elgg",
+            "expressionengine",
+            "fuelphp",
+            "grav",
+            "installer",
+            "itop",
+            "joomla",
+            "kohana",
+            "laravel",
+            "lavalite",
+            "lithium",
+            "magento",
+            "mako",
+            "mediawiki",
+            "modulework",
+            "moodle",
+            "phpbb",
+            "piwik",
+            "ppi",
+            "puppet",
+            "reindex",
+            "roundcube",
+            "shopware",
+            "silverstripe",
+            "sydes",
+            "symfony",
+            "typo3",
+            "wordpress",
+            "yawik",
+            "zend",
+            "zikula"
+        ]
+    },
+    {
+        "name": "netrivet/wp-event-emitter",
+        "version": "5.0.0",
+        "version_normalized": "5.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/downshiftorg/wp-event-emitter.git",
+            "reference": "3ae11f766aa3521bce16500113cc51140677312d"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/downshiftorg/wp-event-emitter/zipball/3ae11f766aa3521bce16500113cc51140677312d",
+            "reference": "3ae11f766aa3521bce16500113cc51140677312d",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.4.0"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.6",
+            "symfony/var-dumper": "~2.6.0"
+        },
+        "time": "2017-09-06T17:25:02+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "NetRivet\\WordPress\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Brian Scaturro",
+                "email": "scaturrob@gmail.com"
+            }
+        ],
+        "description": "An object oriented event emitter for WordPress actions",
+        "abandoned": "downshiftorg/wp-event-emitter"
+    },
+    {
+        "name": "psr/container",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/php-fig/container.git",
+            "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/php-fig/container/zipball/b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+            "reference": "b7ce3b176482dbbc1245ebf52b181af44c2cf55f",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0"
+        },
+        "time": "2017-02-14T16:28:37+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.0.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Psr\\Container\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "PHP-FIG",
+                "homepage": "http://www.php-fig.org/"
+            }
+        ],
+        "description": "Common Container Interface (PHP FIG PSR-11)",
+        "homepage": "https://github.com/php-fig/container",
+        "keywords": [
+            "PSR-11",
+            "container",
+            "container-interface",
+            "container-interop",
+            "psr"
+        ]
+    },
+    {
+        "name": "pimple/pimple",
+        "version": "v3.2.2",
+        "version_normalized": "3.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/silexphp/Pimple.git",
+            "reference": "4d45fb62d96418396ec58ba76e6f065bca16e10a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/silexphp/Pimple/zipball/4d45fb62d96418396ec58ba76e6f065bca16e10a",
+            "reference": "4d45fb62d96418396ec58ba76e6f065bca16e10a",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3.0",
+            "psr/container": "^1.0"
+        },
+        "require-dev": {
+            "symfony/phpunit-bridge": "^3.2"
+        },
+        "time": "2017-07-23T07:32:15+00:00",
+        "type": "library",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "3.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-0": {
+                "Pimple": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Fabien Potencier",
+                "email": "fabien@symfony.com"
+            }
+        ],
+        "description": "Pimple, a simple Dependency Injection Container",
+        "homepage": "http://pimple.sensiolabs.org",
+        "keywords": [
+            "container",
+            "dependency injection"
+        ]
+    },
+    {
+        "name": "htmlburger/carbon-fields",
+        "version": "v3.1.2",
+        "version_normalized": "3.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/htmlburger/carbon-fields.git",
+            "reference": "1d42d0f76e3e9267b73901444bb5ff547b15fb52"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/htmlburger/carbon-fields/zipball/1d42d0f76e3e9267b73901444bb5ff547b15fb52",
+            "reference": "1d42d0f76e3e9267b73901444bb5ff547b15fb52",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "require-dev": {
+            "mockery/mockery": "^0.9.7",
+            "phpunit/phpunit": "~4.8"
+        },
+        "time": "2019-06-11T12:54:01+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Carbon_Fields\\": "core/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-only"
+        ],
+        "authors": [
+            {
+                "name": "htmlBurger",
+                "email": "wordpress@htmlburger.com",
+                "homepage": "https://htmlburger.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Marin Atanasov",
+                "email": "contact@marinatanasov.com",
+                "homepage": "http://marinatanasov.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Siyan Panayotov",
+                "homepage": "http://siyanpanayotov.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Georgi Stoyanov",
+                "email": "stoyanov.gs@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Stanimir Panchev",
+                "email": "Stan4omir@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Peter Petrov",
+                "email": "peter.petrov89@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Plamen Kostadinov",
+                "email": "pkostadinov.2create@gmail.com",
+                "homepage": "http://plasmen.info/",
+                "role": "Developer"
+            },
+            {
+                "name": "Stanimir Stoyanov",
+                "email": "stanimir.k.stoyanov@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Georgi Popov",
+                "homepage": "http://magadanski.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "German Velchev",
+                "email": "germozy@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Rashko Petrov",
+                "email": "brutalenemy666@gmail.com",
+                "homepage": "http://errorfactory.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Miroslav Mitev",
+                "email": "mmitev.2create@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Kaloyan Ivanov",
+                "email": "kaloyanxivanov@gmail.com",
+                "homepage": "http://vilepixels.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Atanas Angelov",
+                "email": "atanas.angelov.dev@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Alexander Panayotov",
+                "email": "alexander.panayotov@gmail.com",
+                "homepage": "http://alexanderpanayotov.com/",
+                "role": "Developer"
+            },
+            {
+                "name": "Viktor Vasilev",
+                "email": "liberalcho@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Georgi Georgiev",
+                "email": "george.georgiev96@gmail.com",
+                "role": "Developer"
+            },
+            {
+                "name": "Atanas Vasilev",
+                "email": "atanasvasilev91@gmail.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "WordPress developer-friendly custom fields for post types, taxonomy terms, users, comments, widgets, options and more.",
+        "homepage": "http://carbonfields.net/"
+    },
+    {
+        "name": "htmlburger/carbon-fields-plugin",
+        "version": "v3.1.2",
+        "version_normalized": "3.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/htmlburger/carbon-fields-plugin.git",
+            "reference": "0163227d286f9ad8b37414efb31036289cd98477"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/htmlburger/carbon-fields-plugin/zipball/0163227d286f9ad8b37414efb31036289cd98477",
+            "reference": "0163227d286f9ad8b37414efb31036289cd98477",
+            "shasum": ""
+        },
+        "require": {
+            "composer/installers": "^1.0",
+            "htmlburger/carbon-fields": "3.1.2",
+            "php": ">=5.3"
+        },
+        "time": "2019-06-11T12:58:07+00:00",
+        "type": "wordpress-plugin",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Carbon_Fields_Plugin\\": "core/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0"
+        ],
+        "authors": [
+            {
+                "name": "atanas-angelov-dev",
+                "email": "atanas.angelov.dev@gmail.com"
+            }
+        ],
+        "description": "WordPress plugin loader for Carbon Fields.",
+        "homepage": "http://carbonfields.net/"
+    }
+]
