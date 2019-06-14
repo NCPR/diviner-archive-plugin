@@ -1,0 +1,22 @@
+.diviner__content-block {
+	margin-bottom: 10px;
+}
+
+
+.diviner__content-block--permission-statement {
+	padding: 30px;
+	border: 1px solid #dddddd;
+	background-color: #fcfcfc;
+	font-size: 80%;
+	color: #353535;
+
+	.diviner__content-block-inner {
+		& > *:first-child {
+			margin-top: 0;
+		}
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

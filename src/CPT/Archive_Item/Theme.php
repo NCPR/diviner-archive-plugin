@@ -2,6 +2,7 @@
 
 namespace NCPR\DivinerArchivePlugin\CPT\Archive_Item;
 
+use NCPR\DivinerArchivePlugin\Admin\Settings;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Diviner_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\PostMeta as DivinerFieldPostMeta;
 use NCPR\DivinerArchivePlugin\CPT\Archive_Item\Post_Meta as Archive_Item_Post_Meta;
@@ -94,7 +95,20 @@ class Theme {
 
 		// add the fields
 		$content .= static::render_meta_fields();
+
+		// add permission statement
+		$content .= static::render_permission_statement();
 		return $content;
+	}
+
+	static public function render_permission_statement() {
+		$permission_statement = carbon_get_theme_option(Settings::FIELD_GENERAL_PERMISSIONS);
+		if (!empty($permission_statement)) {
+			return sprintf(
+				'<div class="diviner__content-block diviner__content-block--permission-statement"><div class="diviner__content-block-inner">%s</div></div>',
+				wpautop($permission_statement)
+			);
+		}
 	}
 
 	/**
@@ -218,8 +232,8 @@ class Theme {
 
 		$thumbnail_id = carbon_get_post_meta( $post_id, Post_Meta::FIELD_PHOTO);
 
-		if ( !isset( $thumbnail_id ) ) {
-			return;
+		if ( !isset( $thumbnail_id ) || empty($thumbnail_id) ) {
+			return '';
 		}
 
 		$caption = wp_get_attachment_caption($thumbnail_id);
