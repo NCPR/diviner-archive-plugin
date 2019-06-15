@@ -7,7 +7,7 @@
  * @package           Plugin
  *
  * @wordpress-plugin
- * Plugin Name:       Diviner Archive Plugin
+ * Plugin Name:       Diviner Archive
  * Plugin URI:        https://ncpr.github.io/diviner-wp-archive-theme/
  * Description:       Provides a set of tools for wordpress sites with archives. Developed wth North Country Public Radio
  * Version:           0.5
