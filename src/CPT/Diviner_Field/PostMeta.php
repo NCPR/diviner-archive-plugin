@@ -7,8 +7,8 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
-/*
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Date_Field;
+/*
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Taxonomy_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Fieldd\Types\CPT_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
@@ -132,7 +132,6 @@ class PostMeta {
 			}
 		}
 
-		/*
 		$date_required = ( $field_type === Date_Field::NAME );
 		$this->container = Container::make( 'post_meta', __( 'Date Field Variables', 'diviner-archive' ) )
 			->where( 'post_type', '=', Diviner_Field::NAME )
@@ -142,6 +141,9 @@ class PostMeta {
 				$this->get_field_date_end($date_required),
 			] )
 			->set_priority( 'low' );
+
+
+		/*
 
 		$taxonomy_required = ( $field_type === Taxonomy_Field::NAME );
 		$this->container = Container::make( 'post_meta', __( 'Taxonomy Field Variables', 'diviner-archive' ) )
@@ -172,6 +174,25 @@ class PostMeta {
 			] )
 			->set_priority( 'low' );
 		*/
+	}
+
+	public function get_field_date_start($required = false) {
+		return Field::make( 'date', static::FIELD_DATE_START, __( 'Start Date of Slider', 'ncpr-diviner' ) )
+			->set_help_text( __( 'If type is century, start date rounds down to nearest century. If type if decade, start date rounds to nearest decade. Only uses year.', 'ncpr-diviner' ) )
+			->set_required( $required );
+	}
+
+	public function get_field_date_end($required = false) {
+		return Field::make( 'date', static::FIELD_DATE_END, __( 'End Date of Slider', 'ncpr-diviner' ) )
+			->set_help_text( __( 'If type is century, end date rounds down to nearest century. If type if decade, end date rounds to nearest decade. Only uses year.', 'ncpr-diviner' ) )
+			->set_required( $required );
+	}
+
+	public function get_field_date_type($required = false) {
+		return Field::make( 'select', static::FIELD_DATE_TYPE, __( 'Type of date field', 'ncpr-diviner' ) )
+			->add_options( static::FIELD_DATE_TYPE_OPTIONS )
+			->set_help_text( __( 'Century slider, Decade slider, Year slider, and two date min max selector', 'ncpr-diviner' ) )
+			->set_required( $required );
 	}
 
 	public function get_current_field_type_if_in_admin() {
@@ -298,13 +319,13 @@ class PostMeta {
 	public function get_field_types() {
 		$types = [
 			Text_Field::NAME => Text_Field::TITLE,
-			/*
 			Date_Field::NAME => Date_Field::TITLE,
+			/*
 			Related_Field::NAME => Related_Field::TITLE,
 			Taxonomy_Field::NAME => Taxonomy_Field::TITLE,
 			Select_Field::NAME => Select_Field::TITLE,
 			CPT_Field::NAME => CPT_Field::TITLE,
-			*/
+		*/
 		];
 		$field =  Field::make( 'select', static::FIELD_TYPE, __( 'Type of field', 'diviner-archive' ) )
 			->set_classes( static::FIELD_TYPE )

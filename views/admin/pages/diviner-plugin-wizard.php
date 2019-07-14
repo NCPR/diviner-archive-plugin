@@ -2,6 +2,7 @@
 
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Diviner_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Date_Field;
 
 ?>
 
@@ -35,6 +36,18 @@ use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
 		<p>
 			<a href="post-new.php?post_type=<?php echo esc_attr( Diviner_Field::NAME ); ?>&field_type=<?php echo esc_attr( Text_Field::NAME ); ?>" class="button button-primary button-hero">
 				<?php _e( 'Add a New Text Meta Field', 'diviner-archive' ); ?>
+			</a>
+		</p>
+	</div>
+
+	<div class="field-select-wrap">
+		<h2>Date</h2>
+		<p>
+			<?php _e('Add a date field if you would like your audience to be able to filter by a date range, by year, decade, or by century. Ex: if you want to sort a collection of a thousand photos from the 20th century into decades.', 'diviner-archive' ); ?>
+		</p>
+		<p>
+			<a href="post-new.php?post_type=<?php echo esc_attr( Diviner_Field::NAME ); ?>&field_type=<?php echo esc_attr( Date_Field::NAME ); ?>" class="button button-primary button-hero">
+				Add a New Date Meta Field
 			</a>
 		</p>
 	</div>
