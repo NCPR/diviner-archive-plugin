@@ -3,6 +3,7 @@
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Diviner_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Date_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
 
 ?>
 
@@ -52,6 +53,19 @@ use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Date_Field;
 		</p>
 	</div>
 
+	<div class="field-select-wrap">
+		<h2>Select Field</h2>
+		<p>
+			<?php _e('Add a select field to assign a piece of information that comes from a very small list of pre-set choices to each of your archive item. Examples: Art Format, with the choices being Painting, Sculpture, or Digital.', 'ncpr-diviner' ); ?>
+		</p>
+		<p>
+			<a href="post-new.php?post_type=<?php echo esc_attr( Diviner_Field::NAME ); ?>&field_type=<?php echo esc_attr( Select_Field::NAME ); ?>" class="button button-primary button-hero">
+				Add a New Select Meta Field
+			</a>
+		</p>
+
+	</div>
+	
 	<p>
 		<?php _e( 'Note: This plugin will evolve overtime. We will be adding more field types (date, custom post type, taxonomy, and select) as well as real-time search experience.', 'diviner-archive' ); ?>
 	</p>

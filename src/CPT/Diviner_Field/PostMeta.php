@@ -8,10 +8,10 @@ use Carbon_Fields\Field;
 
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Date_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
 /*
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Taxonomy_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Fieldd\Types\CPT_Field;
-use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Related_Field;
 */
 
@@ -142,6 +142,13 @@ class PostMeta {
 			] )
 			->set_priority( 'low' );
 
+		$select_required = ( $field_type === Select_Field::NAME );
+		$this->container = Container::make( 'post_meta', __( 'Select Field Variables', 'diviner-archive' ) )
+			->where( 'post_type', '=', Diviner_Field::NAME )
+			->add_fields( [
+				$this->get_field_select_options($select_required),
+			] )
+			->set_priority( 'low' );
 
 		/*
 
@@ -166,15 +173,26 @@ class PostMeta {
 			] )
 			->set_priority( 'low' );
 
-		$select_required = ( $field_type === Select_Field::NAME );
-		$this->container = Container::make( 'post_meta', __( 'Select Field Variables', 'diviner-archive' ) )
-			->where( 'post_type', '=', Diviner_Field::NAME )
-			->add_fields( [
-				$this->get_field_select_options($select_required),
-			] )
-			->set_priority( 'low' );
 		*/
 	}
+
+	public function get_field_select_options($required = false) {
+		return Field::make( 'complex', static::FIELD_SELECT_OPTIONS, __( 'Select Options', 'ncpr-diviner' ) )
+			->add_fields( $this->get_field_select_option_fields($required) );
+	}
+
+	public function get_field_select_option_fields($required = false) {
+		$args = [];
+		$args[] = Field::make( 'text', static::FIELD_SELECT_OPTIONS_VALUE, __( 'Value', 'ncpr-diviner' ) )
+			->set_attribute( 'pattern', '^([A-Za-z]|[0-9]|_)+$' ) // letters numbers no spaces and underscores
+			->set_help_text( __( 'Use only lower case and underscores. No spaces. Used in the URL for facets search', 'ncpr-diviner' ) )
+			->set_required( $required );
+		$args[] = Field::make( 'text', static::FIELD_SELECT_OPTIONS_LABEL, __( 'Label', 'ncpr-diviner' ) )
+			->set_help_text( __( 'Appears in the dropdown', 'ncpr-diviner' ) )
+			->set_required( $required );
+		return $args;
+	}
+
 
 	public function get_field_date_start($required = false) {
 		return Field::make( 'date', static::FIELD_DATE_START, __( 'Start Date of Slider', 'ncpr-diviner' ) )
@@ -320,10 +338,10 @@ class PostMeta {
 		$types = [
 			Text_Field::NAME => Text_Field::TITLE,
 			Date_Field::NAME => Date_Field::TITLE,
+			Select_Field::NAME => Select_Field::TITLE,
 			/*
 			Related_Field::NAME => Related_Field::TITLE,
 			Taxonomy_Field::NAME => Taxonomy_Field::TITLE,
-			Select_Field::NAME => Select_Field::TITLE,
 			CPT_Field::NAME => CPT_Field::TITLE,
 		*/
 		];
