@@ -132,6 +132,9 @@ return [
     'carbonfields.boot' => [
 	    'class' => NCPR\DivinerArchivePlugin\CarbonFields\Boot::class,
     ],
+    'post_types.diviner_field.diviner_field' => [
+	    'class' => NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Diviner_Field::class,
+    ],
     'post_types.diviner_field.postmeta' => [
 	    'class' => NCPR\DivinerArchivePlugin\CPT\Diviner_Field\PostMeta::class,
     ],
