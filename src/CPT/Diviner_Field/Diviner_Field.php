@@ -7,6 +7,7 @@ use NCPR\DivinerArchivePlugin\CarbonFields\Helper;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Date_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\CPT_Field;
 
 
 /**
@@ -203,8 +204,8 @@ class Diviner_Field {
 			Text_Field::NAME     => Text_Field::class,
 			Date_Field::NAME     => Date_Field::class,
 			Select_Field::NAME   => Select_Field::class,
-			/*
 			CPT_Field::NAME      => CPT_Field::class,
+			/*
 			Related_Field::NAME  => Related_Field::class,
 			Taxonomy_Field::NAME => Taxonomy_Field::class,
 			*/

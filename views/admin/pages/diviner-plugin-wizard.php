@@ -4,6 +4,7 @@ use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Diviner_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Date_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\CPT_Field;
 
 ?>
 
@@ -56,11 +57,24 @@ use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
 	<div class="field-select-wrap">
 		<h2>Select Field</h2>
 		<p>
-			<?php _e('Add a select field to assign a piece of information that comes from a very small list of pre-set choices to each of your archive item. Examples: Art Format, with the choices being Painting, Sculpture, or Digital.', 'ncpr-diviner' ); ?>
+			<?php _e('Add a select field to assign a piece of information that comes from a very small list of pre-set choices to each of your archive item. Examples: Art Format, with the choices being Painting, Sculpture, or Digital.', 'diviner-archive' ); ?>
 		</p>
 		<p>
 			<a href="post-new.php?post_type=<?php echo esc_attr( Diviner_Field::NAME ); ?>&field_type=<?php echo esc_attr( Select_Field::NAME ); ?>" class="button button-primary button-hero">
 				Add a New Select Meta Field
+			</a>
+		</p>
+
+	</div>
+
+	<div class="field-select-wrap">
+		<h2>Advanced Detail Field</h2>
+		<p>
+			<?php _e('For categories with many choices (20+) and which you would like to be able to elaborate on and attach auxiliary information, use the Advanced Detail Field. A good example would be if you wished to sort your materials by their creator (photographer, author, etc.) – for each creator, this type of field allows you to create an “entry” for that creator. Other examples: donor, institution. Internally, this field manages what is typically called a custom post type in wordpress vernacular.', 'diviner-archive' ); ?>
+		</p>
+		<p>
+			<a href="post-new.php?post_type=<?php echo esc_attr( Diviner_Field::NAME ); ?>&field_type=<?php echo esc_attr( CPT_Field::NAME ); ?>" class="button button-primary button-hero">
+				Add a New Advanced Detail Field
 			</a>
 		</p>
 
