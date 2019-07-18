@@ -10,6 +10,7 @@ use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Date_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\CPT_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Taxonomy_Field;
 
 /*
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Taxonomy_Field;
@@ -161,8 +162,6 @@ class PostMeta {
 			] )
 			->set_priority( 'low' );
 
-		/*
-
 		$taxonomy_required = ( $field_type === Taxonomy_Field::NAME );
 		$this->container = Container::make( 'post_meta', __( 'Taxonomy Field Variables', 'diviner-archive' ) )
 			->where( 'post_type', '=', Diviner_Field::NAME )
@@ -174,9 +173,32 @@ class PostMeta {
 			] )
 			->set_priority( 'low' );
 
+	}
 
+	public function get_field_taxonomy_slug($required = false) {
+		return Field::make( 'text', static::FIELD_TAXONOMY_SLUG, __( 'Taxonomy Slug', 'diviner-archive' ) )
+			->set_attribute('pattern', '^[a-z0-9]+(?:-[a-z0-9]+)*$' )
+			->set_help_text( __( 'Must be lowercase and dashes only (ex: types-of-work)', 'diviner-archive' ) )
+			->set_required( $required );
+	}
 
-		*/
+	public function get_field_taxonomy_singular_label($required = false) {
+		return Field::make( 'text', static::FIELD_TAXONOMY_SINGULAR_LABEL, __( 'Singular Taxonomy Label', 'diviner-archive' ) )
+			->set_help_text( __( 'ex: Type of Work', 'diviner-archive' ) )
+			->set_required( $required );
+	}
+
+	public function get_field_taxonomy_plural_label($required = false) {
+		return Field::make( 'text', static::FIELD_TAXONOMY_PLURAL_LABEL, __( 'Plural Taxonomy Label', 'diviner-archive' ) )
+			->set_help_text( __( 'ex: Types of Work', 'diviner-archive' ) )
+			->set_required( $required );
+	}
+
+	public function get_field_taxonomy_type($required = false) {
+		return Field::make( 'select', static::FIELD_TAXONOMY_TYPE, __( 'Type of taxonomy field', 'diviner-archive' ) )
+			->add_options( static::FIELD_TAXONOMY_TYPE_OPTIONS )
+			->set_help_text( __( 'Tag or category. Tags are non-hierarchical and categories are hierarchical.', 'diviner-archive' ) )
+			->set_required( $required );
 	}
 
 	public function get_field_cpt_id($required = false) {
@@ -361,9 +383,9 @@ class PostMeta {
 			Date_Field::NAME => Date_Field::TITLE,
 			Select_Field::NAME => Select_Field::TITLE,
 			CPT_Field::NAME => CPT_Field::TITLE,
+			Taxonomy_Field::NAME => Taxonomy_Field::TITLE,
 			/*
 			Related_Field::NAME => Related_Field::TITLE,
-			Taxonomy_Field::NAME => Taxonomy_Field::TITLE,
 		*/
 		];
 		$field =  Field::make( 'select', static::FIELD_TYPE, __( 'Type of field', 'diviner-archive' ) )

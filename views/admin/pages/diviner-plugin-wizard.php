@@ -5,6 +5,7 @@ use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Date_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\CPT_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Taxonomy_Field;
 
 ?>
 
@@ -78,6 +79,18 @@ use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\CPT_Field;
 			</a>
 		</p>
 
+	</div>
+
+	<div class="field-select-wrap">
+		<h2>Taxonomy (Category/Tags/Keywords)</h2>
+		<p>
+			<?php _e('Add a taxonomy field for categories you want to sort your materials by (ex: by location, such as by county, by neighborhood, or by room in a museum). You will have to create the choices in this category (ex: by county; Clinton, Essex, Warren, and Jefferson). Taxonomy fields are best suited to a category with fewer than twenty choices, which do not need further explanation to a viewer.', 'diviner-archive' ); ?>
+		</p>
+		<p>
+			<a href="post-new.php?post_type=<?php echo esc_attr( Diviner_Field::NAME ); ?>&field_type=<?php echo esc_attr( Taxonomy_Field::NAME ); ?>" class="button button-primary button-hero">
+				Add a New Taxonomy Meta Field
+			</a>
+		</p>
 	</div>
 	
 	<p>
