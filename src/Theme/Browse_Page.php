@@ -6,6 +6,7 @@ namespace NCPR\DivinerArchivePlugin\Theme;
 use NCPR\DivinerArchivePlugin\Admin\Settings;
 use NCPR\DivinerArchivePlugin\Support\PluginData;
 use NCPR\DivinerArchivePlugin\Theme\JS_Config;
+use NCPR\DivinerArchivePlugin\Container\Container;
 
 /**
  * Setting up the Browse page at startup
@@ -83,7 +84,12 @@ class Browse_Page {
 		global $post;
 		if( has_shortcode( $post->post_content, static::SHORTCODE ) ) {
 			$version = PluginData::headerData('Version');
-			$app_scripts    = get_template_directory_uri().'/browse-app/dist/master.js';
+
+			// Container::instance('plugin')->plugin_root_file;
+			// plugin_dir_path($this->plugin_root_file) . 'config/';
+
+
+			$app_scripts    = plugins_url('/dist/js/diviner-browse.js', PluginData::root());
 			if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG === true ) {
 				$app_scripts = apply_filters( 'browse_js_dev_path', $app_scripts );
 			}
