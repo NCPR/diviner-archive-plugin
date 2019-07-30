@@ -153,4 +153,10 @@ return [
     'post_types.archive_item.admin' => [
 	    'class' => NCPR\DivinerArchivePlugin\CPT\Archive_Item\AdminModifications::class,
     ],
+    'theme.browse_page' => [
+	    'class' => NCPR\DivinerArchivePlugin\Theme\Browse_Page::class,
+    ],
+    'theme.js_config' => [
+	    'class' => NCPR\DivinerArchivePlugin\Theme\JS_Config::class,
+    ],
 ];
