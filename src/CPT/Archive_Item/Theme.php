@@ -32,6 +32,10 @@ class Theme {
 		if (get_post_type() !== Archive_Item::NAME ) {
 			return $content;
 		}
+		if (!is_singular(Archive_Item::NAME)) {
+			return $content;
+		}
+
 		// add the main content item
 
 		$type = carbon_get_post_meta( get_the_ID(), Archive_Item_Post_Meta::FIELD_TYPE );
