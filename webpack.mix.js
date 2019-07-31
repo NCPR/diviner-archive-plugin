@@ -35,6 +35,31 @@ mix.browserSync({
   ]
 });
 
+/*
+mix.webpackConfig({
+  module: {
+    rules: [
+      {
+        test: /\.css/,
+        loaders: ['style-loader', 'css-loader']
+      }
+    ],
+  },
+});
+*/
+
+class CSSLoader {
+  webpackRules() {
+    return {
+      test: /\.css$/,
+      loaders: ['style-loader', 'css-loader']
+    };
+  }
+}
+
+mix.extend('cssloader', new CSSLoader());
+
+
 // Sass
 mix.sass(`${assets}/sass/diviner-archive.scss`, `${dist}/css/`)
    .sass(`${assets}/sass/diviner-archive-admin.scss`, `${dist}/css/`);
@@ -55,6 +80,8 @@ mix.js(`${assets}/js/diviner-archive.js`, `${dist}/js/`)
    // .js(`${assets}/js/other-name-admin.js`, `${dist}/js/`)
    // .js(`${assets}/js/another-name.js`, `${dist}/js/`)
    // .js(`${assets}/js/another-name-admin.js`, `${dist}/js/`);
+
+mix.cssloader();
 
 // Assets
 mix.copy(`${assets}/fonts`, `${dist}/fonts`, false)
