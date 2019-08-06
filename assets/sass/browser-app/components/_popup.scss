@@ -55,6 +55,17 @@
 	font-size: 90%;
 }
 
+.a-sai__permission-content {
+
+	* {
+		&:first-of-type{
+			margin-top: 0;
+		}
+	}
+
+}
+
+
 .a-sai__img-wrap {
 	max-height: 320px;
 	background-color: $color_grey_dark;

@@ -325,8 +325,8 @@ class ArchiveItem extends Component {
 
 				{
 					(imgSrc) ?
-						<div className="row a-row">
-							<div className="gr-12">
+						<div className="a-row">
+							<div className="a-col--image">
 								<div className="a-sai__img-wrap">
 									<a href={post.permalink} className={actionClass}>
 										<img
@@ -342,8 +342,8 @@ class ArchiveItem extends Component {
 
 				{ this.renderFields() }
 
-				<div className="row a-row a-row--extra-padding">
-					<div className="gr-12">
+				<div className="a-row a-row--extra-padding">
+					<div className="a-col a-col--details">
 						<a href={post.permalink} className="btn btn--full">
 							{ CONFIG.browse_page_localization.popup_view_details }
 						</a>
@@ -351,13 +351,10 @@ class ArchiveItem extends Component {
 
 					{ // Check for disclaimer
 						(rights && rights.length) &&
-						<div className="gr-12">
+						<div>
 							<div
 								className="a-sai__permission"
 							>
-								<div className="h6 a-sai__permission-header">
-									{ CONFIG.browse_page_localization.popup_permission_statement }
-								</div>
 								<div
 									className="a-sai__permission-content"
 									dangerouslySetInnerHTML={{ __html: rights }}
