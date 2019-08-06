@@ -36,6 +36,7 @@
 		color: $color_grey_dark;
 		text-transform: uppercase;
 		font-size: 100%;
+		line-height: 1.2;
 
 		@include respond-to($mq_name_large) {
 			font-size: 120%;

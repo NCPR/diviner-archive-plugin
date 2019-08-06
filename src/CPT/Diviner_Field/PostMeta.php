@@ -101,10 +101,10 @@ class PostMeta {
 		$fields = [
 			$this->get_field_types(),
 			$this->get_field_active(),
-			// $this->get_field_browser_helper_text(),
-			// $this->get_field_browser_placement(),
-			// $this->get_field_display_popup(),
-			// $this->get_field_is_sortable(),
+			$this->get_field_browser_helper_text(),
+			$this->get_field_browser_placement(),
+			$this->get_field_display_popup(),
+			$this->get_field_is_sortable(),
 			$this->get_field_admin_helper_text(),
 			$this->get_field_id(),
 		];
