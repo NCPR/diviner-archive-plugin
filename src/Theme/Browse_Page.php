@@ -18,11 +18,36 @@ class Browse_Page {
 	const DIV_OPTION_REWRITE_RULES = "div_option_rewrite_rules";
 	const SHORTCODE  = "diviner_browse_page";
 
+	const IMAGE_SIZE_BROWSE_POPUP = 'image_size_browse_popup';
+	const IMAGE_SIZE_BROWSE_GRID = 'image_size_browse_grid';
+
+	static $image_sizes = [
+		self::IMAGE_SIZE_BROWSE_POPUP => [
+			'width'  => 600,
+			'height' => 0,
+			'crop'   => true,
+		],
+		self::IMAGE_SIZE_BROWSE_GRID => [
+			'width'  => 600,
+			'height' => 600,
+			'crop'   => true,
+		],
+	];
+
+
 	public function hooks() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_scripts' ] );
 		add_filter( 'diviner_js_config', [ $this, 'filter_diviner_js_config' ] );
+		add_filter( 'after_setup_theme', [ $this, 'add_image_sizes' ] );
 
 		add_shortcode(static::SHORTCODE, [ $this, 'get_browse_page_shortcode' ] );
+	}
+
+	public function add_image_sizes() {
+		foreach ( static::$image_sizes as $key => $attributes ) {
+			add_image_size( $key, $attributes[ 'width' ], $attributes[ 'height' ], $attributes[ 'crop' ] );
+		}
+
 	}
 
 	/**

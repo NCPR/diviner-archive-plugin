@@ -12,7 +12,7 @@ use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\CPT_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
 use NCPR\DivinerArchivePlugin\Admin\Settings;
 use NCPR\DivinerArchivePlugin\CarbonFields\Helper;
-use Diviner\Config\General;
+use NCPR\DivinerArchivePlugin\Theme\Browse_Page;
 
 /**
  * Class Rest
@@ -455,8 +455,8 @@ class Rest {
 		];
 
 		$sizes_in_rest  = [
-			General::IMAGE_SIZE_BROWSE_GRID,
-			General::IMAGE_SIZE_BROWSE_POPUP,
+			Browse_Page::IMAGE_SIZE_BROWSE_GRID,
+			Browse_Page::IMAGE_SIZE_BROWSE_POPUP,
 			'thumbnail' // for fallback
 		];
 

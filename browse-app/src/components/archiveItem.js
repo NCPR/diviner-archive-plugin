@@ -293,8 +293,8 @@ class ArchiveItem extends Component {
 		}
 
 		return (
-			<div className="row a-row a-row--extra-padding">
-				<div className="gr-12">
+			<div className="a-row a-row--extra-padding">
+				<div className="a-col">
 					<div className="a-sai__fields">
 						{filteredOutput}
 					</div>
@@ -315,7 +315,12 @@ class ArchiveItem extends Component {
 
 		return (
 			<section className={itemClass} onKeyDown={this.handleKeyPress}>
-				<h4 dangerouslySetInnerHTML={{ __html: post.title.rendered }} className="single-archive-item__header" />
+				<div className="a-row">
+					<div className="a-col">
+						<h4 dangerouslySetInnerHTML={{ __html: post.title.rendered }} className="single-archive-item__header" />
+					</div>
+				</div>
+
 				{
 					(this.props.shouldDisplayArrows) ?
 					<div className="a-sai__controls">
@@ -326,7 +331,7 @@ class ArchiveItem extends Component {
 				{
 					(imgSrc) ?
 						<div className="a-row">
-							<div className="a-col--image">
+							<div className="a-col a-col--image">
 								<div className="a-sai__img-wrap">
 									<a href={post.permalink} className={actionClass}>
 										<img
@@ -351,14 +356,14 @@ class ArchiveItem extends Component {
 
 					{ // Check for disclaimer
 						(rights && rights.length) &&
-						<div>
-							<div
-								className="a-sai__permission"
-							>
+						<div class="a-row">
+							<div className="a-col">
+								<div className="a-sai__permission">
 								<div
 									className="a-sai__permission-content"
 									dangerouslySetInnerHTML={{ __html: rights }}
 								>
+								</div>
 								</div>
 							</div>
 						</div>
