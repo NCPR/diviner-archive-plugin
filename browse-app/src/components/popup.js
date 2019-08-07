@@ -100,7 +100,7 @@ class Popup extends Component {
 				className={classes}>
 				<div className="a-sai__controls">
 					<button
-						className="a-sai__control-btn a-sai__control-btn--previous"
+						className="a-btn a-sai__control-btn a-sai__control-btn--previous"
 						onClick={this.onPreviousClick}
 					>
 						<span className="diviner-icon-chevron-left" aria-hidden="true"></span>
@@ -109,7 +109,7 @@ class Popup extends Component {
 						</span>
 					</button>
 					<button
-						className="a-sai__control-btn a-sai__control-btn--next"
+						className="a-btn a-sai__control-btn a-sai__control-btn--next"
 						onClick={this.onNextClick}
 					>
 						<span className="a11y-visual-hide">

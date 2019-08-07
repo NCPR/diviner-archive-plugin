@@ -95,7 +95,7 @@ class ArchiveItem extends Component {
 				<label className="a-sai__label">
 					{field.title}
 				</label>
-				<ul className="a-sai__list-item a-sai__list-item--select">
+				<ul className="a-sai__list a-sai__list--select">
 					{selectValuesOutput}
 				</ul>
 			</div>
@@ -349,7 +349,7 @@ class ArchiveItem extends Component {
 
 				<div className="a-row a-row--extra-padding">
 					<div className="a-col a-col--details">
-						<a href={post.permalink} className="btn btn--full">
+						<a href={post.permalink} className="a-btn">
 							{ CONFIG.browse_page_localization.popup_view_details }
 						</a>
 					</div>

@@ -27,6 +27,7 @@
 .a-sai__list {
 	list-style:none;
 	display: inline;
+	padding-left: 0;
 }
 
 .a-sai__list-item {
@@ -169,7 +170,7 @@
 	height: 50px;
 	line-height: 50px;
 	padding: 0;
-	border: 2px solid $color_grey_lighter;
+	border: none;
 }
 
 .a-sai__control-btn--previous {
@@ -218,7 +219,7 @@
 		content: "\f24d";
 	}
 
-	.single-archive-item--sdiv_ai_field_photo &:before {
+	.single-archive-item--div_ai_field_photo &:before {
 		content: "\f03e";
 	}
 }

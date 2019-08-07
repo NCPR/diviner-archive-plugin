@@ -1,6 +1,6 @@
 
 const settings = {
-	postsPerPage: 15,
+	postsPerPage: 4,
 };
 export const SETTINGS = settings;
 

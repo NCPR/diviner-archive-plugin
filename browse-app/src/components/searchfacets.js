@@ -89,7 +89,7 @@ class SearchFacets extends Component {
 			<div className="a-facets">
 
 				<button
-					className="btn btn-fullmobile a-toggle-search-btn"
+					className="a-btn a-toggle-search-btn"
 					onClick={this.onToggleClick}
 				>
 					{toggleText}
@@ -123,7 +123,7 @@ class SearchFacets extends Component {
 						(fieldsOnLeft.length > 0)
 							? <div className="a-input-group a-input-group--clear">
 								<button
-									className="btn btn-s btn-fullmobile a-clear-button"
+									className="a-btn a-clear-button"
 									onClick={this.onClearClick}
 								>
 									{CONFIG.browse_page_localization.facets_reset}
