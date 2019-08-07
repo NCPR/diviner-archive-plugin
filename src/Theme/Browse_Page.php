@@ -7,6 +7,7 @@ use NCPR\DivinerArchivePlugin\Admin\Settings;
 use NCPR\DivinerArchivePlugin\Support\PluginData;
 use NCPR\DivinerArchivePlugin\Plugin;
 use NCPR\DivinerArchivePlugin\Theme\JS_Config;
+use NCPR\DivinerArchivePlugin\Container\Container;
 
 /**
  * Setting up the Browse page at startup
@@ -114,9 +115,6 @@ class Browse_Page {
 		if( static::is_browse_page() ) {
 			$version = PluginData::headerData('Version');
 			$app_scripts    = plugin_dir_url(PluginData::basename()).'browse-app/dist/master.js';
-
-			// plugin_dir_path($this->plugin_root_file) . 'config/';
-
 			if ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG === true ) {
 				$app_scripts = apply_filters( 'browse_js_dev_path', $app_scripts );
 			}
