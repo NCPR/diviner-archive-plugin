@@ -1,6 +1,6 @@
 === Diviner Archive ===
 Contributors: graemehoffman
-Tags: archive,fields
+Tags: archive,fields,search
 Requires at least: 5.0
 Tested up to: 5.2.1
 Requires PHP: 7.0
