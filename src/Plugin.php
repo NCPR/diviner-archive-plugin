@@ -126,14 +126,15 @@ final class Plugin
         $this->container->get('cpt_controller')->addCustomPostTypes();
 
 	    $this->container->get('carbonfields.boot')->boot_carbon_fields();
+	    $this->container->get('post_types.diviner_field.diviner_field')->hooks();
 	    $this->container->get('post_types.diviner_field.postmeta')->hooks();
 	    $this->container->get('post_types.diviner_field.admin')->hooks();
 	    $this->container->get('admin.settings')->hooks();
 	    $this->container->get('post_types.archive_item.postmeta')->hooks();
 	    $this->container->get('post_types.archive_item.theme')->hooks();
 	    $this->container->get('post_types.archive_item.admin')->hooks();
-
-
+	    $this->container->get('post_types.archive_item.rest')->hooks();
+	    $this->container->get('theme.browse_page')->hooks();
 
 	    $this->loaded = true;
 

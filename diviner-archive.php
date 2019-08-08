@@ -1,18 +1,15 @@
 <?php
 
 /**
- *
- * @link              https://ncpr.github.io/diviner-wp-archive-theme/
- * @since             0.1.0
- * @package           Plugin
- *
- * @wordpress-plugin
+ * @package Diviner Archive
+ */
+/*
  * Plugin Name:       Diviner Archive
  * Plugin URI:        https://ncpr.github.io/diviner-wp-archive-theme/
- * Description:       Provides a set of tools for wordpress sites with archives. Developed wth North Country Public Radio
- * Version:           0.5
- * Author:            Graeme Hoffman
- * Author URI:        http://graemehoffman.com/
+ * Description:       Provides a set of tools for wordpress sites with archives. Developed with North Country Public Radio
+ * Version:           0.5.1
+ * Author:            North Country Public Radio
+ * Author URI:        http://ncpr.org/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       diviner-archive

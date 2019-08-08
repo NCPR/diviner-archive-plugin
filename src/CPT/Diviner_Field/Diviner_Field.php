@@ -5,6 +5,11 @@ namespace NCPR\DivinerArchivePlugin\CPT\Diviner_Field;
 
 use NCPR\DivinerArchivePlugin\CarbonFields\Helper;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Date_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\CPT_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Taxonomy_Field;
+use NCPR\DivinerArchivePlugin\Theme\Browse_Page;
 
 
 /**
@@ -27,7 +32,7 @@ class Diviner_Field {
 
 	public function hooks() {
 		add_filter( 'diviner_js_config', [ $this, 'custom_diviner_js_config' ] );
-		add_action( 'init', [ $this, 'hydrate_cache' ], 0 );
+		add_action( 'carbon_fields_register_fields', [ $this, 'hydrate_cache' ], 0 );
 		// add_filter( 'carbon_fields_should_save_field_value', [ $this, 'filter_should_save_field_value' ], 10, 3 );
 		// add_filter( 'carbon_fields_should_delete_field_value_on_save', [ $this, 'filter_should_delete_field_value' ], 10, 2 );
 	}
@@ -106,16 +111,19 @@ class Diviner_Field {
 	}
 
 	static public function get_field_post_meta($id, $post_meta_name, $container_id = 'carbon_fields_container_field_variables') {
+		// printf('get_field_post_meta %s %s <br>', $id, $post_meta_name);
 		$key = sprintf(
 			'%s%s',
 			$id,
 			Helper::get_real_field_name($post_meta_name)
 		);
 		$cached_value = wp_cache_get( $key );
+		// printf('cached value %s <br>', $cached_value);
 		if ( $cached_value ) {
 			return $cached_value;
 		}
 		$uncached_value = carbon_get_post_meta($id, $post_meta_name, $container_id);
+		// printf('uncached value %s<br>', $uncached_value);
 		wp_cache_set( $key, $uncached_value );
 		return $uncached_value;
 	}
@@ -196,12 +204,12 @@ class Diviner_Field {
 	static public function get_class( $field_type ) {
 		$map = [
 			Text_Field::NAME     => Text_Field::class,
-			/*
 			Date_Field::NAME     => Date_Field::class,
-			CPT_Field::NAME      => CPT_Field::class,
-			Related_Field::NAME  => Related_Field::class,
-			Taxonomy_Field::NAME => Taxonomy_Field::class,
 			Select_Field::NAME   => Select_Field::class,
+			CPT_Field::NAME      => CPT_Field::class,
+			Taxonomy_Field::NAME => Taxonomy_Field::class,
+			/*
+			Related_Field::NAME  => Related_Field::class,
 			*/
 		];
 		if( !array_key_exists( $field_type, $map ) ){
@@ -263,7 +271,7 @@ class Diviner_Field {
 	 * @return array       Altered data
 	 */
 	public function custom_diviner_js_config( $data  ) {
-		if ( !is_page_template('page-browser.php') ) {
+		if ( !Browse_Page::is_browse_page() ) {
 			return $data;
 		}
 
@@ -290,6 +298,7 @@ class Diviner_Field {
 		$data['taxonomies'] = $taxonomy_terms; //ToDo make this dynamic
 		$data['cpt_posts'] = $cpt_posts; // ToDo make this dynamic
 		$data['order_by'] = $this->get_order_by_options();
+
 		return $data;
 
 	}

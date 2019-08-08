@@ -1,0 +1,95 @@
+
+/// Mixin to manage responsive breakpoints
+/// @author Hugo Giraudel
+/// @param {String} $breakpoint - Breakpoint name
+/// @require $breakpoints
+@mixin respond-to($breakpoint) {
+	// If the key exists in the map
+	@if map-has-key($respond_to_breakpoints, $breakpoint) {
+		// Prints a media query based on the value
+		@media #{inspect(map-get($respond_to_breakpoints, $breakpoint))} {
+			@content;
+		}
+	}
+
+		// If the key doesn't exist in the map
+	@else {
+		@warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        + "Available breakpoints are: #{map-keys($respond_to_breakpoints)}.";
+	}
+}
+
+@mixin visually-hide() {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px;
+}
+
+@mixin hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+@mixin visually-show {
+	clip: auto;
+	width: auto;
+	height: auto;
+	margin: 0;
+	position: static;
+}
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+@mixin button-global {
+	width: auto;
+	display: inline-block;
+	line-height: 1;
+	font-weight: bold;
+	height: auto;
+	cursor: pointer;
+	text-decoration: none;
+	border: 0;
+	letter-spacing: .0275em;
+	padding: 0;
+	text-transform: uppercase;
+	font-size: 16px;
+	transition: $t_transition;
+
+	@include respond-to($mq_name_medium) {
+		font-size: 18px;
+	}
+}
+
+@mixin button ($withStates: true) {
+	@include  button-global;
+
+	background-color: $color_button_primary_bg;
+	text-align: center;
+	color: $color_button_primary;
+	padding: 0.8em 1.2em;
+	border-radius: 0;
+
+	@if $withStates {
+		&:visited {
+			color: $color_button_primary;
+		}
+		&:hover,
+		&:focus,
+		&:active {
+			background-color: $color_button_primary_bg_hover;
+			color: $color_button_primary_hover;
+			text-decoration: none;
+		}
+	}
+}

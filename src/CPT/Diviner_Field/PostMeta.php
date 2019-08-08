@@ -7,11 +7,13 @@ use Carbon_Fields\Container;
 use Carbon_Fields\Field;
 
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
-/*
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Date_Field;
-use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Taxonomy_Field;
-use NCPR\DivinerArchivePlugin\CPT\Diviner_Fieldd\Types\CPT_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\CPT_Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Taxonomy_Field;
+
+/*
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Taxonomy_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Related_Field;
 */
 
@@ -99,10 +101,10 @@ class PostMeta {
 		$fields = [
 			$this->get_field_types(),
 			$this->get_field_active(),
-			// $this->get_field_browser_helper_text(),
-			// $this->get_field_browser_placement(),
-			// $this->get_field_display_popup(),
-			// $this->get_field_is_sortable(),
+			$this->get_field_browser_helper_text(),
+			$this->get_field_browser_placement(),
+			$this->get_field_display_popup(),
+			$this->get_field_is_sortable(),
 			$this->get_field_admin_helper_text(),
 			$this->get_field_id(),
 		];
@@ -132,7 +134,6 @@ class PostMeta {
 			}
 		}
 
-		/*
 		$date_required = ( $field_type === Date_Field::NAME );
 		$this->container = Container::make( 'post_meta', __( 'Date Field Variables', 'diviner-archive' ) )
 			->where( 'post_type', '=', Diviner_Field::NAME )
@@ -140,6 +141,24 @@ class PostMeta {
 				$this->get_field_date_type($date_required),
 				$this->get_field_date_start($date_required),
 				$this->get_field_date_end($date_required),
+			] )
+			->set_priority( 'low' );
+
+		$select_required = ( $field_type === Select_Field::NAME );
+		$this->container = Container::make( 'post_meta', __( 'Select Field Variables', 'diviner-archive' ) )
+			->where( 'post_type', '=', Diviner_Field::NAME )
+			->add_fields( [
+				$this->get_field_select_options($select_required),
+			] )
+			->set_priority( 'low' );
+
+		$cpt_required = ( $field_type === CPT_Field::NAME );
+		$this->container = Container::make( 'post_meta', __( 'Advanced Detail Field Variables', 'diviner-archive' ) )
+			->where( 'post_type', '=', Diviner_Field::NAME )
+			->add_fields( [
+				$this->get_field_cpt_id($cpt_required),
+				$this->get_field_cpt_label($cpt_required),
+				$this->get_field_cpt_slug($cpt_required),
 			] )
 			->set_priority( 'low' );
 
@@ -154,24 +173,87 @@ class PostMeta {
 			] )
 			->set_priority( 'low' );
 
-		$cpt_required = ( $field_type === CPT_Field::NAME );
-		$this->container = Container::make( 'post_meta', __( 'Advanced Detail Field Variables', 'diviner-archive' ) )
-			->where( 'post_type', '=', Diviner_Field::NAME )
-			->add_fields( [
-				$this->get_field_cpt_id($cpt_required),
-				$this->get_field_cpt_label($cpt_required),
-				$this->get_field_cpt_slug($cpt_required),
-			] )
-			->set_priority( 'low' );
+	}
 
-		$select_required = ( $field_type === Select_Field::NAME );
-		$this->container = Container::make( 'post_meta', __( 'Select Field Variables', 'diviner-archive' ) )
-			->where( 'post_type', '=', Diviner_Field::NAME )
-			->add_fields( [
-				$this->get_field_select_options($select_required),
-			] )
-			->set_priority( 'low' );
-		*/
+	public function get_field_taxonomy_slug($required = false) {
+		return Field::make( 'text', static::FIELD_TAXONOMY_SLUG, __( 'Taxonomy Slug', 'diviner-archive' ) )
+			->set_attribute('pattern', '^[a-z0-9]+(?:-[a-z0-9]+)*$' )
+			->set_help_text( __( 'Must be lowercase and dashes only (ex: types-of-work)', 'diviner-archive' ) )
+			->set_required( $required );
+	}
+
+	public function get_field_taxonomy_singular_label($required = false) {
+		return Field::make( 'text', static::FIELD_TAXONOMY_SINGULAR_LABEL, __( 'Singular Taxonomy Label', 'diviner-archive' ) )
+			->set_help_text( __( 'ex: Type of Work', 'diviner-archive' ) )
+			->set_required( $required );
+	}
+
+	public function get_field_taxonomy_plural_label($required = false) {
+		return Field::make( 'text', static::FIELD_TAXONOMY_PLURAL_LABEL, __( 'Plural Taxonomy Label', 'diviner-archive' ) )
+			->set_help_text( __( 'ex: Types of Work', 'diviner-archive' ) )
+			->set_required( $required );
+	}
+
+	public function get_field_taxonomy_type($required = false) {
+		return Field::make( 'select', static::FIELD_TAXONOMY_TYPE, __( 'Type of taxonomy field', 'diviner-archive' ) )
+			->add_options( static::FIELD_TAXONOMY_TYPE_OPTIONS )
+			->set_help_text( __( 'Tag or category. Tags are non-hierarchical and categories are hierarchical.', 'diviner-archive' ) )
+			->set_required( $required );
+	}
+
+	public function get_field_cpt_id($required = false) {
+		return Field::make( 'text', static::FIELD_CPT_ID, __( 'Advanced Detail Field ID (use only lower case with underscores)', 'diviner-archive' ) )
+			->set_attribute( 'pattern', '^([A-Za-z]|[0-9]|_)+$' ) // letters numbers no spaces and underscores
+			->set_required( $required );
+	}
+
+	public function get_field_cpt_label($required = false) {
+		return Field::make( 'text', static::FIELD_CPT_LABEL, __( 'Advanced Detail Field Label', 'diviner-archive' ) )
+			->set_help_text( __( 'Appears in the left side admin menu', 'diviner-archive' ) )
+			->set_required( $required );
+	}
+
+	public function get_field_cpt_slug($required = false) {
+		return Field::make( 'text', static::FIELD_CPT_SLUG, __( 'Advanced Detail Field Slug (use only lower case with dashes)', 'diviner-archive' ) )
+			->set_attribute( 'pattern', '^[a-z0-9]+(?:-[a-z0-9]+)*$')
+			->set_required( $required );
+	}
+
+	public function get_field_select_options($required = false) {
+		return Field::make( 'complex', static::FIELD_SELECT_OPTIONS, __( 'Select Options', 'diviner-archive' ) )
+			->add_fields( $this->get_field_select_option_fields($required) );
+	}
+
+	public function get_field_select_option_fields($required = false) {
+		$args = [];
+		$args[] = Field::make( 'text', static::FIELD_SELECT_OPTIONS_VALUE, __( 'Value', 'diviner-archive' ) )
+			->set_attribute( 'pattern', '^([A-Za-z]|[0-9]|_)+$' ) // letters numbers no spaces and underscores
+			->set_help_text( __( 'Use only lower case and underscores. No spaces. Used in the URL for facets search', 'diviner-archive' ) )
+			->set_required( $required );
+		$args[] = Field::make( 'text', static::FIELD_SELECT_OPTIONS_LABEL, __( 'Label', 'diviner-archive' ) )
+			->set_help_text( __( 'Appears in the dropdown', 'diviner-archive' ) )
+			->set_required( $required );
+		return $args;
+	}
+
+
+	public function get_field_date_start($required = false) {
+		return Field::make( 'date', static::FIELD_DATE_START, __( 'Start Date of Slider', 'diviner-archive' ) )
+			->set_help_text( __( 'If type is century, start date rounds down to nearest century. If type if decade, start date rounds to nearest decade. Only uses year.', 'diviner-archive' ) )
+			->set_required( $required );
+	}
+
+	public function get_field_date_end($required = false) {
+		return Field::make( 'date', static::FIELD_DATE_END, __( 'End Date of Slider', 'diviner-archive' ) )
+			->set_help_text( __( 'If type is century, end date rounds down to nearest century. If type if decade, end date rounds to nearest decade. Only uses year.', 'diviner-archive' ) )
+			->set_required( $required );
+	}
+
+	public function get_field_date_type($required = false) {
+		return Field::make( 'select', static::FIELD_DATE_TYPE, __( 'Type of date field', 'diviner-archive' ) )
+			->add_options( static::FIELD_DATE_TYPE_OPTIONS )
+			->set_help_text( __( 'Century slider, Decade slider, Year slider, and two date min max selector', 'diviner-archive' ) )
+			->set_required( $required );
 	}
 
 	public function get_current_field_type_if_in_admin() {
@@ -298,13 +380,13 @@ class PostMeta {
 	public function get_field_types() {
 		$types = [
 			Text_Field::NAME => Text_Field::TITLE,
-			/*
 			Date_Field::NAME => Date_Field::TITLE,
-			Related_Field::NAME => Related_Field::TITLE,
-			Taxonomy_Field::NAME => Taxonomy_Field::TITLE,
 			Select_Field::NAME => Select_Field::TITLE,
 			CPT_Field::NAME => CPT_Field::TITLE,
-			*/
+			Taxonomy_Field::NAME => Taxonomy_Field::TITLE,
+			/*
+			Related_Field::NAME => Related_Field::TITLE,
+		*/
 		];
 		$field =  Field::make( 'select', static::FIELD_TYPE, __( 'Type of field', 'diviner-archive' ) )
 			->set_classes( static::FIELD_TYPE )

@@ -22,9 +22,14 @@
   "license": "ISC",
   "homepage": "https://ncpr.github.io/diviner-wp-archive-theme/",
   "devDependencies": {
+    "babel-preset-react": "^6.24.1",
     "browser-sync": "^2.18.13",
     "browser-sync-webpack-plugin": "^1.2.0",
     "laravel-mix": "^1.4.2",
     "rucksack-css": "^0.9.1"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }

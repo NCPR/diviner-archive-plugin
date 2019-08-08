@@ -1,0 +1,26 @@
+
+/* React pagination */
+
+ul.react-pagination {
+	display: inline-block;
+	margin: 20px 0;
+	padding-left: 0;
+	padding-right: 15px;
+}
+
+ul.react-pagination li {
+	display: inline-block;
+	margin-right: 5px;
+
+	&.disabled {
+		display: none;
+	}
+
+	a {
+		cursor: pointer;
+	}
+}
+
+ul.react-pagination .break a {
+	cursor: default;
+}

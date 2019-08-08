@@ -132,6 +132,9 @@ return [
     'carbonfields.boot' => [
 	    'class' => NCPR\DivinerArchivePlugin\CarbonFields\Boot::class,
     ],
+    'post_types.diviner_field.diviner_field' => [
+	    'class' => NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Diviner_Field::class,
+    ],
     'post_types.diviner_field.postmeta' => [
 	    'class' => NCPR\DivinerArchivePlugin\CPT\Diviner_Field\PostMeta::class,
     ],
@@ -149,5 +152,14 @@ return [
     ],
     'post_types.archive_item.admin' => [
 	    'class' => NCPR\DivinerArchivePlugin\CPT\Archive_Item\AdminModifications::class,
+    ],
+    'post_types.archive_item.rest' => [
+	    'class' => NCPR\DivinerArchivePlugin\CPT\Archive_Item\Rest::class,
+    ],
+    'theme.browse_page' => [
+	    'class' => NCPR\DivinerArchivePlugin\Theme\Browse_Page::class,
+    ],
+    'theme.js_config' => [
+	    'class' => NCPR\DivinerArchivePlugin\Theme\JS_Config::class,
     ],
 ];

@@ -3,7 +3,6 @@
 namespace NCPR\DivinerArchivePlugin\CPT\Diviner_Field;
 
 use NCPR\DivinerArchivePlugin\Admin\Settings;
-use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Text_Field;
 
 /**
  * Class Admin Modifications
@@ -66,7 +65,7 @@ class AdminModifications {
 
 		add_meta_box(
 			Diviner_Field::META_BOX_ID,
-			__( 'Additional Field Details', 'ncpr-diviner' ),
+			__( 'Additional Field Details', 'diviner-archive' ),
 			array( $this, 'render_metabox' ),
 			Diviner_Field::NAME,
 			'side',
@@ -111,9 +110,9 @@ class AdminModifications {
 		$new = [];
 		foreach($columns as $key=>$value) {
 			if($key=='date') {  // when we find the date column
-				$new['field_active'] = __( 'Active', 'ncpr-diviner' );
-				$new['field_type'] = __( 'Field Type', 'ncpr-diviner' );
-				$new['field_placement'] = __( 'Browse Placement', 'ncpr-diviner' );
+				$new['field_active'] = __( 'Active', 'diviner-archive' );
+				$new['field_type'] = __( 'Field Type', 'diviner-archive' );
+				$new['field_placement'] = __( 'Browse Placement', 'diviner-archive' );
 
 			}
 			$new[$key]=$value;
@@ -126,20 +125,20 @@ class AdminModifications {
 		$post = get_post();
 		$messages[Diviner_Field::NAME] = array(
 			0  => '', // Unused. Messages start at index 1.
-			1  => __( 'Diviner Field updated.', 'ncpr-diviner' ),
-			2  => __( 'Custom field updated.', 'ncpr-diviner' ),
-			3  => __( 'Custom field deleted.', 'ncpr-diviner' ),
-			4  => __( 'Diviner Field updated.', 'ncpr-diviner' ),
+			1  => __( 'Diviner Field updated.', 'diviner-archive' ),
+			2  => __( 'Custom field updated.', 'diviner-archive' ),
+			3  => __( 'Custom field deleted.', 'diviner-archive' ),
+			4  => __( 'Diviner Field updated.', 'diviner-archive' ),
 			/* translators: %s: date and time of the revision */
-			5  => isset( $_GET['revision'] ) ? sprintf( __( 'Diviner Field restored to revision from %s', 'ncpr-diviner' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-			6  => __( 'Diviner Field published.', 'ncpr-diviner' ),
-			7  => __( 'Diviner Field saved.', 'ncpr-diviner' ),
-			8  => __( 'Diviner Field submitted.', 'ncpr-diviner' ),
+			5  => isset( $_GET['revision'] ) ? sprintf( __( 'Diviner Field restored to revision from %s', 'diviner-archive' ), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
+			6  => __( 'Diviner Field published.', 'diviner-archive' ),
+			7  => __( 'Diviner Field saved.', 'diviner-archive' ),
+			8  => __( 'Diviner Field submitted.', 'diviner-archive' ),
 			9  => sprintf(
-				__( 'Diviner Field scheduled for: <strong>%1$s</strong>.', 'ncpr-diviner' ),
-				date_i18n( __( 'M j, Y @ G:i', 'ncpr-diviner' ), strtotime( $post->post_date ) )
+				__( 'Diviner Field scheduled for: <strong>%1$s</strong>.', 'diviner-archive' ),
+				date_i18n( __( 'M j, Y @ G:i', 'diviner-archive' ), strtotime( $post->post_date ) )
 			),
-			10 => __( 'Diviner Field draft updated.', 'ncpr-diviner' )
+			10 => __( 'Diviner Field draft updated.', 'diviner-archive' )
 		);
 
 		return $messages;
@@ -150,7 +149,7 @@ class AdminModifications {
 		if( !empty($post) && $post->post_type !== Diviner_Field::NAME) {
 			return;
 		}
-		printf( '<div>%s</div>', __( 'Label appearing on the Archive item Edit Screen', 'ncpr-diviner' ) );
+		printf( '<div>%s</div>', __( 'Label appearing on the Archive item Edit Screen', 'diviner-archive' ) );
 	}
 
 	/**
@@ -166,12 +165,12 @@ class AdminModifications {
 			return $translation;
 		}
 		if ( 'Excerpt' == $original ) {
-			return __( 'Field Description', 'ncpr-diviner' ); //Change here to what you want Excerpt box to be called
+			return __( 'Field Description', 'diviner-archive' ); //Change here to what you want Excerpt box to be called
 		} else {
 			$pos = strpos($original, 'Excerpts are optional hand-crafted summaries of your');
 
 			if ($pos !== false) {
-				return __( 'Appears in the manage fields page of the admin', 'ncpr-diviner' );
+				return __( 'Appears in the manage fields page of the admin', 'diviner-archive' );
 			}
 		}
 		return $translation;
@@ -281,9 +280,9 @@ class AdminModifications {
 		<div class="wrap wrap-diviner wrap-diviner--auto-width wrap-diviner--light">
 			<h2>
 			<?php if ( $presetFieldTable->is_empty() ) {
-				_e( 'Build out your archive item!', 'ncpr-diviner' );
+				_e( 'Build out your archive item!', 'diviner-archive' );
 			} else {
-				_e( 'Add meta data to your archive item', 'ncpr-diviner' );
+				_e( 'Add meta data to your archive item', 'diviner-archive' );
 			} ?>
 			</h2>
 			<a href="index.php?page=<?php echo esc_attr( static::SLUG_WIZARD ); ?>" class="button button-primary button-hero">
