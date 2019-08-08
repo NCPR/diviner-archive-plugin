@@ -49,7 +49,6 @@ mix.sass(`${assets}/sass/diviner-archive.scss`, `${dist}/css/`)
 // });
 
 mix.js(`${assets}/js/diviner-archive.js`, `${dist}/js/`)
-    .react(`${assets}/js/diviner-browse.js`, `${dist}/js/`)
     .js(`${assets}/js/diviner-archive-admin.js`, `${dist}/js/`);
    // .js(`${assets}/js/other-name.js`, `${dist}/js/`)
    // .js(`${assets}/js/other-name-admin.js`, `${dist}/js/`)

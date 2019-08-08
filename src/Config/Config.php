@@ -25,7 +25,8 @@ use NCPR\DivinerArchivePlugin\Support\Arr;
 
 class Config extends ArrayObject implements ConfigInterface
 {
-    /**
+
+	/**
      * Runtime configuration parameters
      *
      * @var array    $config    Runtime configuration parameters

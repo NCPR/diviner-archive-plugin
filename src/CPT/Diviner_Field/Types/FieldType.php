@@ -3,8 +3,8 @@
 namespace NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types;
 
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Diviner_Field;
-//use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\PostMeta;
-// use Carbon_Fields\Field;
+use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\PostMeta;
+use Carbon_Fields\Field;
 
 /**
  * Abstract Field Type

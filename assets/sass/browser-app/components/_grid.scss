@@ -4,28 +4,38 @@
 }
 
 .a-grid {
-
+	box-sizing: border-box;
 	margin-top: $d_spacer_sm;
-}
-
-.a-item {
-	margin-bottom: 20px;
-
 
 	@include respond-to($mq_name_small) {
-		width: 50%;
+		display: flex;
+		flex-wrap: wrap;
+		margin-right: -1 * $d_spacer_m;
+		margin-left: -1 * $d_spacer_m;
+	}
+
+}
+
+
+.a-item {
+	margin-bottom: $d_spacer_m;
+
+	@include respond-to($mq_name_small) {
+		width: calc(50% - #{$d_spacer_m} - #{$d_spacer_m});
+		margin-right: $d_spacer_m;
+		margin-left: $d_spacer_m;
 	}
 
 	@include respond-to($mq_name_medium) {
-		width: 33.33%;
+		width: calc(33.33% - #{$d_spacer_m} - #{$d_spacer_m});
 	}
 
 	@include respond-to($mq_name_full) {
-		width: 25%;
+		width: calc(33.33% - #{$d_spacer_m} - #{$d_spacer_m});
 	}
 
 	@include respond-to($mq_name_large) {
-		width: 12.5%;
+		width: calc(25% - #{$d_spacer_m} - #{$d_spacer_m});
 	}
 }
 
@@ -114,6 +124,7 @@
 }
 
 .a-item__figure-caption {
+	line-height: 1.2;
 
 	&:before {
 		font-family: $font_icon;
