@@ -2,7 +2,20 @@
 
 Tools for an archive in Wordpress based on https://github.com/sbarry50/wordpress-starter-plugin, an object-oriented foundation with a modern file architecture, standards and build tools for crafting high-quality WordPress Plugins.
 
+
 ## Features
+
+* Admin tool for managing archive items with meta data
+
+
+* Small scale archiving tool for a wide array of media materials (audio, video, documents, articles)
+* Customizable multi-faceted search mechanism
+* Dublin Core like meta data fields. Fields include Select, Date, Taxonomy, Text, Custom Post Type (called Advanced Detail Field )
+* Shortcode to output browse experience
+
+The project is managed by the excellent people at [North Country Public Radio](http://northcountrypublicradio.org) and supported by a digital humanities grant from the [National Endowment for Humanities](https://www.neh.gov/)
+
+## Technology base
 
 * Pimple container dependency injection
 * Built-in initialization tasks

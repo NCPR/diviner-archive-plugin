@@ -39,6 +39,7 @@ There are several filters for outputting the content. They are diviner_render_do
 1. Example single archive item
 2. Diviner General Settings
 3. Diviner Field Management
+4. Browse Experience
 
 == Changelog ==
 = 0.5 =
