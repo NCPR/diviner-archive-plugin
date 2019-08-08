@@ -89,7 +89,7 @@ class Controls extends Component {
 							/>
 						</div>
 						<button
-							className="btn a-search-button"
+							className="a-btn a-search-button"
 							onClick={this.onClick}
 							dangerouslySetInnerHTML={{__html:CONFIG.browse_page_localization.search_cta}}
 						/>

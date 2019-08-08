@@ -100,22 +100,22 @@ class Popup extends Component {
 				className={classes}>
 				<div className="a-sai__controls">
 					<button
-						className="a-sai__control-btn a-sai__control-btn--previous"
+						className="a-btn a-sai__control-btn a-sai__control-btn--previous"
 						onClick={this.onPreviousClick}
 					>
-						<span className="fas fa-arrow-left" aria-hidden="true"></span>
+						<span className="diviner-icon-chevron-left" aria-hidden="true"></span>
 						<span className="a11y-visual-hide">
 							{ CONFIG.browse_page_localization.popup_previous }
 						</span>
 					</button>
 					<button
-						className="a-sai__control-btn a-sai__control-btn--next"
+						className="a-btn a-sai__control-btn a-sai__control-btn--next"
 						onClick={this.onNextClick}
 					>
 						<span className="a11y-visual-hide">
 							{ CONFIG.browse_page_localization.popup_next}
 						</span>
-						<span className="fas fa-arrow-right" aria-hidden="true"></span>
+						<span className="diviner-icon-chevron-right" aria-hidden="true"></span>
 					</button>
 				</div>
 

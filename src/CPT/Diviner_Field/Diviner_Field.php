@@ -9,6 +9,7 @@ use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Date_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Select_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\CPT_Field;
 use NCPR\DivinerArchivePlugin\CPT\Diviner_Field\Types\Taxonomy_Field;
+use NCPR\DivinerArchivePlugin\Theme\Browse_Page;
 
 
 /**
@@ -30,7 +31,7 @@ class Diviner_Field {
 	}
 
 	public function hooks() {
-		// add_filter( 'diviner_js_config', [ $this, 'custom_diviner_js_config' ] );
+		add_filter( 'diviner_js_config', [ $this, 'custom_diviner_js_config' ] );
 		add_action( 'carbon_fields_register_fields', [ $this, 'hydrate_cache' ], 0 );
 		// add_filter( 'carbon_fields_should_save_field_value', [ $this, 'filter_should_save_field_value' ], 10, 3 );
 		// add_filter( 'carbon_fields_should_delete_field_value_on_save', [ $this, 'filter_should_delete_field_value' ], 10, 2 );
@@ -270,7 +271,7 @@ class Diviner_Field {
 	 * @return array       Altered data
 	 */
 	public function custom_diviner_js_config( $data  ) {
-		if ( !is_page_template('page-browser.php') ) {
+		if ( !Browse_Page::is_browse_page() ) {
 			return $data;
 		}
 
@@ -297,6 +298,7 @@ class Diviner_Field {
 		$data['taxonomies'] = $taxonomy_terms; //ToDo make this dynamic
 		$data['cpt_posts'] = $cpt_posts; // ToDo make this dynamic
 		$data['order_by'] = $this->get_order_by_options();
+
 		return $data;
 
 	}

@@ -94,9 +94,9 @@ class Grid extends Component {
 							breakClassName={"break-me"}
 							pageCount={totalPages}
 							marginPagesDisplayed={2}
-							pageLinkClassName="btn"
-							previousLinkClassName="btn"
-							nextLinkClassName="btn"
+							pageLinkClassName="a-btn"
+							previousLinkClassName="a-btn"
+							nextLinkClassName="a-btn"
 							forcePage={currentPage}
 							pageRangeDisplayed={4}
 							onPageChange={this.handlePageClick}

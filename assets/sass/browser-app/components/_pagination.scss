@@ -12,18 +12,12 @@ ul.react-pagination li {
 	display: inline-block;
 	margin-right: 5px;
 
-	a {
-		@include button;
-
-		color: $color_white;
-	}
-
-	&.active a {
-		background-color: $color_grey;
-	}
-
 	&.disabled {
 		display: none;
+	}
+
+	a {
+		cursor: pointer;
 	}
 }
 
