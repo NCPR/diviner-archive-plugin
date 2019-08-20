@@ -41,6 +41,10 @@ class Browse_Page {
 		add_filter( 'diviner_js_config', [ $this, 'filter_diviner_js_config' ] );
 		add_filter( 'after_setup_theme', [ $this, 'add_image_sizes' ] );
 
+		add_action( 'initi', [ $this, 'register_shortcodes' ] );
+	}
+
+	public function register_shortcodes () {
 		add_shortcode(static::SHORTCODE, [ $this, 'get_browse_page_shortcode' ] );
 	}
 
