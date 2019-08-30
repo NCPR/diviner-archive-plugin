@@ -174,7 +174,8 @@ class FieldDate extends Component {
 	}
 
 	getYearFromDate(date) {
-		const nextDate = new Date(date.substring(0, 4));
+		const year = date.substring(0, 4);
+		const nextDate = new Date(`January 1 ${year}`);
 		return nextDate.getFullYear();
 	}
 
@@ -271,6 +272,7 @@ class FieldDate extends Component {
 		if (!value || !value.length) {
 			value = [min, max];
 		}
+
 		return (
 			<ASlider
 				id={field.field_id}
