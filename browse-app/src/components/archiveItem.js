@@ -220,7 +220,6 @@ class ArchiveItem extends Component {
 		const month = parseInt(from[1], 10);
 		const day = parseInt(from[2], 10);
 		const date = new Date(year, month, day);
-		console.log(from, year, month-1, day);
 		let dateOutput = format(date, 'MM/DD/YYYY');
 
 		if (field[FIELD_DATE_TYPE] === FIELD_DATE_TYPE_CENTURY) {
