@@ -1,6 +1,6 @@
 {
   "name": "diviner-archive",
-  "version": "0.5",
+  "version": "0.5.2",
   "description": "A WordPress Plugin for non-profits archives",
   "main": "webpack.mix.js",
   "directories": {
