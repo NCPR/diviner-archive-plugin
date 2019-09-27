@@ -77,5 +77,15 @@ All field data is kept in the post meta table. Archive Single data is a custom p
 4. Browse Experience
 
 == Changelog ==
+= 0.5.2 =
+Fix to shortcode output
+
+= 0.5.1 =
+* Select Field
+* Taxonomy Field
+* Custom Post Type Field
+* Date Field
+* Shortcode for browse experience with multifaceted search
+
 = 0.5 =
 First release
