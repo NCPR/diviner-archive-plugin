@@ -155,7 +155,7 @@ class FieldDate extends Component {
 		}
 		return [
 			`${sliderValue[0]}/1/1`,
-			`${sliderValue[1]}/1/1`
+			`${sliderValue[1]}/12/31`
 		]
 	}
 
