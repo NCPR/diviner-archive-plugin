@@ -60,7 +60,7 @@ class Browse_Page {
 	 *
 	 */
 	function get_browse_page_shortcode() {
-		echo '<div id="browse-app"></div>';
+		return '<div id="browse-app"></div>';
 	}
 
 	/**
