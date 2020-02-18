@@ -14,21 +14,24 @@ Set up a basic archive. Manage your meta data. Add video or audio or photos as n
 == Description ==
 DIVINER is a free and open-source Wordpress plugin for small to mid-size institutions with public archiving needs. DIVINER 1.0 is a digital platform built for archiving, organizing, and presenting large amounts of photographs, audio, video, and documents - or all four! DIVINER might be right for your organization if you have a collection of humanities materials you would like to share with the public (for example, a collection of 3,000 photographs of a large farm in the early 1900s; or thousands of audio clips and interviews related to immigration in Wisconsin).
 
-We plan to have future releases, and are currently working with organizations, big AND small, from around the United States to populate their own installations of DIVINER. Check back soon for examples of how people are using DIVINER for their own projects - from historical photo archives to special projects on immigration in the US!
+This plugin creates a new Archive Item content type with an admin interface for adding meta fields. The fields can be of several different flavors: Text, Date, Advanced Detail Field, Taxonomy, and Select. During the initial setup you set up these fields and config them. Once setup is complete you can start adding archive items as documents, photos, videos, audio, or mixed format with all your intended meta information. Each archive item single page displays the main media elements before the content and then all the meta field data after the content.
 
-This plugin creates a new Archive Item content type with an admin interface for adding meta fields. The fields can be of several different flavors: Text, Date, Advanced Custom Field, Taxonomy, and Select. During the initial setup you set up these fields and config them. Once setup is complete you can start adding archive items as documents, photos, videos, audio, or mixed format with all your intended meta information. Each archive item single page displays the main media elements before the content and then all the meta field data after the content.
-
-The plugin also provides a shortcode ([diviner_browse_page]) which can be added to any page and which generates a responsive real time multifacet search experience for exploring your archive. This Browse experience includes a search bar, and sorting options, as well as search facets per each field. Search returns are updated in real time and appear in a paginated grid the facets.
+The plugin also provides a shortcode ([diviner_browse_page]) which can be added to any page and which generates a responsive real time multifacet search experience for exploring your archive. This Browse experience includes a search bar, and sorting options, as well as search facets per each field. Search returns are updated in real time and appear in a paginated grid.
 
 To improve performance, this plugin is designed to work well with the ElasticPress plugin.
 
+Find out if Diviner is right for your project and access detailed installation instructions at [https://ncpr.github.io/diviner-wp-archive-theme/](https://ncpr.github.io/diviner-wp-archive-theme/).
+
 
 == Installation ==
+
 1) Download and activate plugin.
 2) Go to Diviner General Settings to add permissions statement to the bottom all archive Items
 3) Go to Diviner Manager Fields to set up meta fields to be associated with your archive items (ex: Photographer Name)
 4) Create Archive Items
 5) Navigate to the your archive items and view the meta fields and feature media (image, audio, video, document)
+
+View detailed installation instructions on the [project website](https://ncpr.github.io/diviner-wp-archive-theme/)
 
 
 == Frequently Asked Questions ==
@@ -44,7 +47,7 @@ Use a date field if you would like your audience to be able to filter by a date 
 
 Use a select field to assign a piece of information that comes from a very small list of pre-set choices to each of your archive item. Examples: Art Format, with the choices being Painting, Sculpture, or Digital.
 
-= Why use a Advanced Custom field?  =
+= Why use a Advanced Detail field?  =
 
 For categories with many choices (20+) and which you would like to be able to elaborate on and attach auxiliary information, use the Advanced Detail Field. A good example would be if you wished to sort your materials by their creator (photographer, author, etc.) – for each creator, this type of field allows you to create an “entry” for that creator. Other examples: donor, institution. Internally, this field manages what is typically called a custom post type in wordpress vernacular.
 
